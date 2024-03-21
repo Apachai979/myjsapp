@@ -1,8 +1,9 @@
+import TheHeader from "@/components/TheHeader";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="container mx-auto flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       <h1 className="flex flex-col">Контакты</h1>
       <div className="flex flex-col-2 space-x-10">
         <div className="bg-neutral-300 rounded-lg p-10 space-y-3 flex flex-col text-xl">
