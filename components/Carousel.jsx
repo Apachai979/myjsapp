@@ -2,8 +2,9 @@
 import Image from "next/image"
 import sliderShape from "@/public/sliderImage/sliderShape.svg"
 import { useState } from "react"
-import { BsCaretLeft } from "react-icons/bs";
-import { BsChevronLeft } from "react-icons/bs";
+import { FaChevronCircleLeft } from "react-icons/fa";
+import { FaChevronCircleRight } from "react-icons/fa";
+import { FaRegCircle } from "react-icons/fa";
 
 
 export default function Carousel() {
@@ -11,11 +12,11 @@ export default function Carousel() {
     const [slideimage, setSlideimage] = useState(0)
 
     let slides = [
-        "/sliderImage/machine.png",
-        "/sliderImage/marla.png",
-        "/sliderImage/medsisters.png",
-        "/sliderImage/nabor.png",
-        "/sliderImage/proc.png",
+        { description: "Одноразовые процедурные стерильные наборы", buttonName: "Посмотреть каталог", scr: "/sliderImage/machine.png" },
+        { description: "Собственное производство", buttonName: "Ознакомиться", scr: "/sliderImage/marla.png" },
+        { description: "Сырьё и материалы", buttonName: "Подробнее", scr: "/sliderImage/medsisters.png" },
+        { description: "Стерильность и безопасность", buttonName: "Подробнее", scr: "/sliderImage/nabor.png" },
+        { description: "Полезное для профессионалов", buttonName: "Подробнее", scr: "/sliderImage/proc.png" },
     ]
 
     return (
@@ -41,17 +42,28 @@ export default function Carousel() {
                     priority>
                 </Image>
 
-                <button onClick={() => setSlideimage(slideimage - 1)} className="absolute bottom-6 left-10 flex h-8 w-8 rounded-full justify-center items-center bg-white p-4 z-30">
-                    <BsChevronLeft color="black" size="20" className="absolute" />
-                </button>
+                <div className="absolute bottom-6 left-10 flex items-center justify-center space-x-5">
+                    <div className="flex space-x-3">
+                        <button onClick={() => setSlideimage(slideimage - 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green">
+                            <FaChevronCircleLeft className="absolute fill-white hover:fill-stone-300" size="34" />
+                        </button>
 
-                <button onClick={() => setSlideimage(slideimage + 1)} className="absolute bottom-6 left-20 flex h-8 w-8 rounded-full justify-center items-center bg-white p-4 z-30 cursor-pointer">
-                    f
-                </button>
+                        <button onClick={() => setSlideimage(slideimage + 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green">
+                            <FaChevronCircleRight className="absolute fill-white hover:fill-stone-300" size="34" />
+                        </button>
+                    </div>
 
+                    <div className="flex space-x-2">
+                        <div className=" w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"></div>
+                        <div className=" w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"></div>
+                        <div className=" w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"></div>
+                        <div className=" w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"></div>
+                        <div className=" w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"></div>
+                    </div>
+
+                </div>
             </div>
 
-            <BsCaretLeft color="black" />
 
         </>
     )
