@@ -2,6 +2,8 @@
 import Image from "next/image"
 import sliderShape from "@/public/sliderImage/sliderShape.svg"
 import { useState } from "react"
+import { BsCaretLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 
 
 export default function Carousel() {
@@ -40,7 +42,7 @@ export default function Carousel() {
                 </Image>
 
                 <button onClick={() => setSlideimage(slideimage - 1)} className="absolute bottom-6 left-10 flex h-8 w-8 rounded-full justify-center items-center bg-white p-4 z-30">
-                    b
+                    <BsChevronLeft color="black" size="20" className="absolute" />
                 </button>
 
                 <button onClick={() => setSlideimage(slideimage + 1)} className="absolute bottom-6 left-20 flex h-8 w-8 rounded-full justify-center items-center bg-white p-4 z-30 cursor-pointer">
@@ -49,7 +51,7 @@ export default function Carousel() {
 
             </div>
 
-
+            <BsCaretLeft color="black" />
 
         </>
     )
