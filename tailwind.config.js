@@ -23,7 +23,17 @@ module.exports = {
         primary_green: '#15C8B4',
         contrast_green: '#11B19F',
         txtLight: '#bebeb4',
-        middle_green: '#14a091'
+        middle_green: '#14a091',
+        txtMiddle: '#7e9895',
+
+        bodyColor: '#fcfbf8',
+        txtGreen: '#133531',
+        mainGreen: '#15C8B4',
+        contrastColor: '#11B19F',
+        txtLight: '#bebeb4',
+        txtMiddle: '#7e9895',
+        backMiddle: '#14a091',
+
       },
       screens: {
         'lg2': '1250px',

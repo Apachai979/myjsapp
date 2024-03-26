@@ -14,9 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${notoSans.className} container mx-auto px-4 antialiased bg-body_bg text-night_green`}>
+      <body className={`${notoSans.className} antialiased bg-body_bg text-night_green`}>
         <TheHeader />
-        <main className="">
+        <main >
           {children}
         </main>
         <TheFooter />

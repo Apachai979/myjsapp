@@ -4,9 +4,10 @@ import Navigation from "./Navigation"
 
 export default function TheHeader() {
     return (
-        <>
-            <div className="flex justify-center">
-                <div className="flex items-center whitespace-nowrap sticky bg-body_bg top-0 z-50 min-h-16 w-[1200px]">
+        <header className="container mx-auto px-4 sticky top-0 z-50">
+
+            <div className="flex justify-center ">
+                <div className="flex items-center min-h-16 whitespace-nowrap bg-body_bg  w-[1200px]">
 
                     <Link href="/" className="flex-none">
                         <span className="sr-only">Onestep Logo</span>
@@ -29,6 +30,7 @@ export default function TheHeader() {
 
                 </div>
             </div>
-        </>
+
+        </header>
     )
 }
