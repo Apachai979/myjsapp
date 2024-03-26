@@ -22,7 +22,12 @@ export default function Carousel() {
     return (
         <>
 
-            <div className="w-[1160px] h-120 justify-center m-auto my-8 relative rounded-3xl overflow-hidden">
+            <div className="w-[1160px] h-120 justify-center m-auto my-8 relative rounded-3xl overflow-hidden z-30">
+
+                <div className="absolute flex left-10 top-20 flex-col justify-center w-[320px] h-[250px] z-30 font-semibold text-3xl space-y-7">
+                    <h1 className="flex text-white">Одноразовые процедурные стерильные наборы</h1>
+                    <button className="flex w-[220px] h-14 bg-white rounded-full z-30 justify-center text-stone-700 text-xl items-center hover:text-white hover:bg-primary_green hover:border-2 hover:border-white transition duration-300">Ознакомиться</button>
+                </div>
 
                 <Image
                     src={sliderShape}
@@ -44,12 +49,12 @@ export default function Carousel() {
 
                 <div className="absolute bottom-6 left-10 flex items-center justify-center space-x-5">
                     <div className="flex space-x-3">
-                        <button onClick={() => setSlideimage(slideimage - 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green">
-                            <FaChevronCircleLeft className="absolute fill-white hover:fill-stone-300" size="34" />
+                        <button onClick={() => setSlideimage(slideimage - 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green transition duration-300">
+                            <FaChevronCircleLeft className="absolute fill-white hover:fill-stone-300 transition duration-300" size="34" />
                         </button>
 
-                        <button onClick={() => setSlideimage(slideimage + 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green">
-                            <FaChevronCircleRight className="absolute fill-white hover:fill-stone-300" size="34" />
+                        <button onClick={() => setSlideimage(slideimage + 1)} className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-stone-500 hover:bg-night_green transition duration-300">
+                            <FaChevronCircleRight className="absolute fill-white hover:fill-stone-300 transition duration-300" size="34" />
                         </button>
                     </div>
 
