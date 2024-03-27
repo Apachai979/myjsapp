@@ -2,8 +2,8 @@ import Image from "next/image"
 
 export default function About() {
 
-    const rule = [
-        { title: "Мы дорожим своими КЛИЕНТАМИ", description: "Создавая компанию более 25 лет назад, мы поставили перед собой амбициозную цель: обеспечить современным медицинским оборудованием лечебные учреждения региона. Поэтому, в центре нашего внимания - ключевые запросы ЗАКАЗЧИКОВ. И в том, что многие из них получили статус передовых высокотехнологичных медицинских центров, есть и наш вклад.", src: "/about/img1.jpg" },
+    const ruleOneStep = [
+        { title: "Мы дорожим своими КЛИЕНТАМИ", description: "Создавая компанию более 25 лет назад, мы поставили перед собой амбициозную цель: обеспечить современным медицинским оборудованием лечебные учреждения региона. Поэтому, в центре нашего внимания - ключевые запросы ЗАКАЗЧИКОВ. И в том, что многие из них получили статус передовых высокотехнологичных медицинских центров, есть и наш вклад.", src: "/about/img1.png" },
         { title: "Мы гордимся своей КОМАНДОЙ", description: "Создавая компанию более 25 лет назад, мы поставили перед собой амбициозную цель: обеспечить современным медицинским оборудованием лечебные учреждения региона. Поэтому, в центре нашего внимания - ключевые запросы ЗАКАЗЧИКОВ. И в том, что многие из них получили статус передовых высокотехнологичных медицинских центров, есть и наш вклад.", src: "/about/img2.jpg" },
         { title: "Мы создаем новые НАПРАВЛЕНИЯ", description: "Объединяя все, что наработали ранее, руководствуясь приоритетными задачами медицинской отрасли в стране, мы вышли на новый уровень развития: освоение производственной сферы, отвечающей запросам сегодняшнего дня – производство хирургических материалов нового поколения.", src: "/about/img3.jpg" },
         { title: "Мы открыты для БУДУЩЕГО!", description: "В перспективе – развитие существующих направлений и создание новых. Каких – ответ даст сама жизнь и задачи наших заказчиков. А наша команда, надеемся, будет всегда профессионально готова к новым вызовам!", src: "/about/img4.jpg" },
@@ -23,6 +23,7 @@ export default function About() {
                     <h1 className='absolute text-white font-bold text-5xl text-center z-20 '>OneStep сегодня</h1>
                 </div>
             </div>
+
             {/* Nextblock */}
 
             <div className="container mx-auto px-4 max-w-[1200px]">
@@ -46,9 +47,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            {/* Nextblock */}
 
             {/* Nextblock */}
+
             <div className='bg-white '>
                 <div className='container mx-auto px-4 max-w-[1200px]'>
                     <div className='mt-10 mb-14 '>
@@ -127,80 +128,28 @@ export default function About() {
                         <h1 className='text-txtGreen font-semibold text-4xl text-center pt-10'>Принципы  <span className='text-mainGreen'>OneStep</span></h1>
                     </div>
 
-                    <div className='flex flex-col justify-center items-center lg:space-x-10 lg:flex-row'>
-                        <div className='flex-1 order-2 lg:order-1'>
-                            <h2 className='text-2xl text-mainGreen  mb-4 lg:mb-6 font-semibold'>Мы дорожим своими КЛИЕНТАМИ</h2>
-                            <p className='text-xl text-gray-950/95'>Создавая компанию более 25 лет назад, мы поставили перед собой амбициозную цель: обеспечить современным медицинским оборудованием лечебные учреждения региона. Поэтому, в центре нашего внимания - ключевые запросы ЗАКАЗЧИКОВ. И в том, что многие из них получили статус передовых высокотехнологичных медицинских центров, есть и наш вклад.</p>
-                        </div>
-                        <div className='flex-1 order-1 lg:order-2 mb-6'>
-                            <Image className='rounded-2xl object-cover shadow-md'
-                                src="/about/img1.png"
-                                width={1920}
-                                height={1080}
-                                alt="EA">
-                            </Image>
-                        </div>
-                    </div>
+                    {ruleOneStep.map((elem) => {
+                        let reverse = "-reverse"
+                        ruleOneStep.indexOf(elem) % 2 === 0 ? reverse = "-reverse" : reverse = ""
 
-                    <div className='flex justify-center items-center lg:flex-row-reverse lg:space-x-10 lg:space-x-reverse'>
-                        <div className='w-1/2'>
-                            <h2 className='text-2xl text-mainGreen mb-4 lg:mb-4 font-semibold'>Мы гордимся своей КОМАНДОЙ</h2>
-                            <p className='text-xl text-gray-950/95'>Накапливая и анализируя опыт ведения бизнеса, нам удалось построить КОМАНДУ специалистов - экспертов своего дела, людей, обладающих исследовательским и новаторским духом, способных нестандартно подходить к решению различных бизнес-задач, тем самым помогая заказчику достичь поставленные цели.</p>
-                        </div>
-                        <div className='w-1/2'>
-                            <Image className='rounded-2xl object-cover'
-                                src="/about/img2.jpg"
-                                width={1920}
-                                height={1080}
-                                alt="EA">
-                            </Image>
-                        </div>
-                    </div>
+                        return (
+                            <div className={`flex justify-center items-center flex-col-reverse space-y-5 space-y-reverse lg:space-y-0 lg:flex-row${reverse} lg:space-x${reverse} lg:space-x-10`}>
+                                <div className='lg:w-1/2'>
+                                    <h2 key={elem.title} className='text-2xl text-mainGreen mb-1 lg:mb-4 font-semibold'>{elem.title}</h2>
+                                    <p className='text-xl text-gray-950/95'>{elem.description}</p>
+                                </div>
+                                <div className='lg:w-1/2 '>
+                                    <Image className='rounded-2xl object-cover shadow-md'
+                                        src={elem.src}
+                                        width={1920}
+                                        height={1080}
+                                        alt="EA">
+                                    </Image>
+                                </div>
+                            </div>
+                        )
+                    })}
 
-                    <div className='flex flex-col justify-center items-center lg:space-x-10  lg:flex-row'>
-                        <div className='flex-1 order-2 lg:order-1'>
-                            <h2 className='text-2xl text-mainGreen  mb-4 lg:mb-6 font-semibold'>Мы создаем новые НАПРАВЛЕНИЯ</h2>
-                            <p className='text-xl text-gray-950/95'>Объединяя все, что наработали ранее, руководствуясь приоритетными задачами медицинской отрасли в стране, мы вышли на новый уровень развития: освоение производственной сферы, отвечающей запросам сегодняшнего дня – производство хирургических материалов нового поколения.</p>
-                        </div>
-                        <div className='flex-1 order-1 lg:order-1 mb-6'>
-                            <Image className='rounded-2xl object-cover'
-                                src="/about/img3.jpg"
-                                width={1920}
-                                height={1080}
-                                alt="EA">
-                            </Image>
-                        </div>
-                    </div>
-                    <div className='flex flex-col justify-center items-center lg:space-x-10 lg:flex-row'>
-                        <div className='flex-1 order-1 mb-6 '>
-                            <Image className='rounded-2xl object-cover'
-                                src="/about/img4.jpg"
-                                width={1920}
-                                height={1080}
-                                alt="EA">
-                            </Image>
-                        </div>
-                        <div className='flex-1 order-2'>
-                            <h2 className='text-2xl text-mainGreen  mb-4 lg:mb-6 font-semibold'>Мы открыты для БУДУЩЕГО!</h2>
-                            <p className='text-xl text-gray-950/95'>В перспективе – развитие существующих направлений и создание новых. Каких – ответ даст сама жизнь и задачи наших заказчиков. А наша команда, надеемся, будет всегда профессионально готова к новым вызовам!</p>
-                        </div>
-                    </div>
-                    <div className='flex flex-col justify-center items-center lg:space-x-10 lg:flex-row'>
-                        <div className='flex-1 order-2 lg:order-1'>
-                            <h2 className='text-2xl text-mainGreen  mb-4 lg:mb-6 font-semibold'>Мы готовы к новому ПАРТНЕРСТВУ</h2>
-                            <p className='text-xl text-gray-950/95'>Вы - ученый или научный коллектив с разработанной, но не воплощенной идеей в области медицины?
-                                Ваша клиника - в поиске новых технологических решений по оказанию медицинской помощи и готова стать площадкой для апробации и внедрения?
-                                Мы готовы стать той конструкторско-производственной площадкой, которая позволит объединить наши устремления в единый ПРОЕКТ!</p>
-                        </div>
-                        <div className='flex-1 order-1 lg:order-2 mb-6'>
-                            <Image className='rounded-2xl object-cover'
-                                src="/about/img5.jpg"
-                                width={1920}
-                                height={1080}
-                                alt="EA">
-                            </Image>
-                        </div>
-                    </div>
                 </div>
             </div>
 
