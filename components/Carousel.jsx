@@ -80,7 +80,7 @@ export default function Carousel() {
                         {arrSlidesKeys.map((elem) => {
                             const isActive = slide === elem
                             return (
-                                <button onClick={() => showSlide(elem)} className={isActive ? "w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer z-30" : "w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"}></button>
+                                <button key={elem} onClick={() => showSlide(elem)} className={isActive ? "w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer z-30" : "w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30"}></button>
                             )
                         })}
                     </div>
