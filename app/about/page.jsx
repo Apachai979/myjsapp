@@ -22,42 +22,31 @@ export default function About() {
                     </div>
                     <h1 className='absolute text-white font-bold text-5xl text-center z-20 '>OneStep сегодня</h1>
                 </div>
-                {/* Nextblock */}
-                <div className='flex flex-col lg:flex-row my-14 mx-14 space-y-6 lg:space-x-14 space-y-reverse'>
-                    <div className='flex-auto lg:w-2/3 order-2 space-y-6'>
-                        <h2 className='text-3xl text-txtGreen'>
-                            — Идея запустить собственное производство обсуждалась нашей командой давно.
-                        </h2>
-                        <p className='text-txtGreen/90 text-xl'>
-                            Но решение о старте было принято стремительно.
-                            Причиной тому - изменившаяся ситуация: резкое снижение доступа к мировым рынкам медицинской продукции.
-                        </p>
-                        <p className='text-txtGreen/90 text-xl'>
-                            Предполагалось ли, с какими вызовами придется столкнуться нам при открытии нового бизнес-направления, да еще в условиях возникающей неопределенности? Конечно, нет.
-                        </p>
-                        <p className='text-txtGreen/90 text-xl'>
-                            Но ответственность, драйв и творческая позиция команды сделали возможным достижение поставленной цели.
-                            Практика показала, что мы верно выбрали вектор развития. Идея отечественного производства в настоящее время актуальна, как никогда.
-                        </p>
-                        <p className='text-txtGreen/90 text-xl'>
-                            Наш большой проект продолжает твориться руками и усилиями многих. Я благодарю за достигнутый результат нашу команду, партнеров, заказчиков! Без вас и вашей поддержки мы бы ничего не добились.
-                        </p>
+            </div>
+            {/* Nextblock */}
+
+            <div className="container mx-auto px-4 max-w-[1200px]">
+                <div className="flex flex-col-reverse lg:flex-row justify-center items-center m-6 lg:m-10 lg:space-x-10 space-y-6 space-y-reverse">
+                    <div className="flex lg:w-2/3 flex-col text-txtGreen/90 text-xl space-y-6">
+                        <h2 className='text-3xl text-txtGreen'> — Идея запустить собственное производство обсуждалась нашей командой давно.</h2>
+                        <p>Но решение о старте было принято стремительно. Причиной тому - изменившаяся ситуация: резкое снижение доступа к мировым рынкам медицинской продукции.</p>
+                        <p>Предполагалось ли, с какими вызовами придется столкнуться нам при открытии нового бизнес-направления, да еще в условиях возникающей неопределенности? Конечно, нет.</p>
+                        <p>Но ответственность, драйв и творческая позиция команды сделали возможным достижение поставленной цели.Практика показала, что мы верно выбрали вектор развития. Идея отечественного производства в настоящее время актуальна, как никогда.</p>
+                        <p>Наш большой проект продолжает твориться руками и усилиями многих. Я благодарю за достигнутый результат нашу команду, партнеров, заказчиков! Без вас и вашей поддержки мы бы ничего не добились.</p>
                     </div>
-                    <div className='flex justify-center order-1 lg:order-2 lg:w-1/3 '>
-                        <div className="lg:mt-4">
-                            <Image
-                                src="/about/PhotoEA.png"
-                                width={300}
-                                height={300}
-                                alt="EA"
-                            />
-                            <h2 className='text-center text-2xl text-txtGreen leading-tight'>Даниленко <p>
-                                Елена Анатольевна</p></h2>
-                            <p className='text-center text-base text-txtGreen leading-relaxed'> директор по развитию </p>
-                        </div>
+                    <div className="flex flex-col items-center lg:w-1/3">
+                        <Image
+                            src="/about/PhotoEA.png"
+                            width={300}
+                            height={300}
+                            alt="EA"
+                        />
+                        <h2 className='text-center text-2xl text-txtGreen leading-tight'>Даниленко <p>Елена Анатольевна</p></h2>
+                        <p className='text-center text-base text-txtGreen leading-relaxed'> директор по развитию </p>
                     </div>
                 </div>
             </div>
+            {/* Nextblock */}
 
             {/* Nextblock */}
             <div className='bg-white '>
