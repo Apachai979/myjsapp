@@ -23,11 +23,7 @@ export default function Partners() {
                                 <div className='h-9 w-9 rotate-45 bg-primary_green rounded-lg'></div>
                                 <h1 key={elem.title} className='text-2xl text-gray-950'>{elem.title}:</h1>
                                 <ul className="list-disc list-inside text-txtMiddle text-lg leading-normal">
-                                    {elem.description.map((el) => {
-                                        return (
-                                            <li key={el}>{el}</li>
-                                        )
-                                    })}
+                                    {elem.description.map((el) => (<li key={el}>{el}</li>))}
                                 </ul>
                             </div>
                         )
