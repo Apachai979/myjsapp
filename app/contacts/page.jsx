@@ -1,6 +1,8 @@
 import FormContact from "@/components/forms/FormContact"
 
+
 export default function Contacts() {
+
     return (
         <div className="container mx-auto px-4 min-h-screen">
             <div className="flex flex-col items-center">
