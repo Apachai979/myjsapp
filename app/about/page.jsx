@@ -1,3 +1,4 @@
+import ButtonExtra from "@/components/buttons/ButtonExtra"
 import Image from "next/image"
 
 export default function About() {
@@ -132,11 +133,11 @@ export default function About() {
                     </div>
 
                     {ruleOneStep.map((elem) => {
-                        let reverse = "-reverse"
-                        ruleOneStep.indexOf(elem) % 2 === 0 ? reverse = "" : reverse = "-reverse"
+                        let reverse = ""
+                        ruleOneStep.indexOf(elem) % 2 === 0 ? reverse = " lg:flex-row lg:space-x " : reverse = " lg:flex-row-reverse lg:space-x-reverse "
 
                         return (
-                            <div className={`flex justify-center items-center flex-col-reverse space-y-5 space-y-reverse lg:space-y-0 lg:flex-row${reverse} lg:space-x${reverse} lg:space-x-10`}>
+                            <div className={`flex justify-center items-center flex-col-reverse space-y-5 space-y-reverse lg:space-y-0 ${reverse} lg:space-x-10`}>
                                 <div className='lg:w-1/2'>
                                     <h2 key={elem.title} className='text-2xl text-mainGreen mb-1 lg:mb-4 font-semibold'>{elem.title}</h2>
                                     <p className='text-xl text-gray-950/95'>{elem.description}</p>
@@ -183,6 +184,14 @@ export default function About() {
                     </div>
                 </div>
             </div >
+
+            {/* NextBlock */}
+            <div className='container mx-auto px-4 py-10'>
+                <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 justify-center items-center text-xl space-x-10">
+                    <h2>Мы открыты для новых проектов и сотрудничества</h2>
+                    <ButtonExtra url={'/'} textButton={"Связаться со специалистом"} />
+                </div>
+            </div>
         </>
     )
 }

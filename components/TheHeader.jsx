@@ -5,7 +5,7 @@ import Navigation from "./Navigation"
 export default function TheHeader() {
     return (
         <header className="sticky top-0 z-50 bg-body_bg">
-            <div className="container mx-auto mb-1 px-4">
+            <div className="container mx-auto mb-1">
                 <div className="flex justify-center ">
                     <div className="flex items-center min-h-16 whitespace-nowrap bg-body_bg  w-[1200px]">
 

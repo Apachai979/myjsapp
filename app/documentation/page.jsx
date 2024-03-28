@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Documentation() {
     return (
         <>
-            <div className="container mx-auto max-w-[1200px] px-4">
+            <div className="container mx-auto max-w-[1200px] px-4 min-h-screen">
                 <h1 className="text-5xl text-txtGreen font-semibold m-10">Документы</h1>
 
                 <div className="bg-white lg:mx-10 px-10 md:px-5 pt-3 pb-6 rounded-2xl mt-10">

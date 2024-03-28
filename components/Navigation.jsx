@@ -18,7 +18,7 @@ export default function Navigation() {
 
     return (
         <nav className="grow">
-            <div className="flex justify-evenly items-center px-10">
+            <div className="flex justify-evenly lg1100:px-10 items-center">
                 {navItems.map((link) => {
                     const isActive = pathname === link.href;
                     return (
