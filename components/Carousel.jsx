@@ -40,7 +40,7 @@ export default function Carousel() {
     return (
         <div className="container mx-auto px-4">
 
-            <div className="w-[1160px] h-120 justify-center m-auto my-10 relative rounded-3xl overflow-hidden z-30 drop-shadow-md  ">
+            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-30 drop-shadow-md  ">
 
                 <div className="absolute flex left-10 top-24 flex-col justify-center w-[370px] h-[250px] z-30 font-semibold text-4xl space-y-7">
                     <h1 className="flex text-white">{slides[slide].description}</h1>
