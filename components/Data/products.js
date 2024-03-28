@@ -1,5 +1,4 @@
-
-const products = [
+export const products = [
   {
     name: 'Наборы медицинские процедурные NeoSet', description: 'description', href: '#',
     items: [

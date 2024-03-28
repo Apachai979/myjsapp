@@ -1,3 +1,5 @@
+import { FaPhone } from "react-icons/fa6";
+
 export default function FormContact() {
     return (
         <form className="space-y-4">
@@ -13,11 +15,9 @@ export default function FormContact() {
             </div>
 
             <div className="relative">
-                <input id="your_phone_number" type="text" className="block rounded-md pl-10 px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary_green peer" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder=" " />
+                <input id="your_phone_number" type="text" className="block rounded-md pl-10 px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50  border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-primary_green peer" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder=" " />
                 <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-focus:translate-y-1.5 duration-300 transform translate-y-1.5 peer-placeholder-shown:translate-y-0">
-                    <svg className="w-4 h-4 absolute text-gray-500 duration-300 transform origin-[0] z-10 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
-                        <path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z" />
-                    </svg>
+                    <FaPhone />
                 </div>
                 <label for="your_phone_number" className="pl-8 absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-primary_green  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Ваш телефон</label>
             </div>
