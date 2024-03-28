@@ -1,6 +1,8 @@
 import Link from "next/link"
+import Neosets from "@/components/Neosets"
+import TellaSoft from "@/components/TellaSoft"
 
-export default async function Catalogs() {
+export default function Catalogs() {
 
     return (
         <>
@@ -8,13 +10,13 @@ export default async function Catalogs() {
                 <h1 className="text-txtGreen text-4xl font-semibold text-left my-10">Каталог нашей продукции</h1>
                 <h2 className="text-txtGreen text-2xl font-semibold text-left my-10">Наборы медицинские процедурные NeoSet</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-5 xl:grid-cols-4 justify-items-center">
-                    {/* <Neosets /> */}
+                    <Neosets />
                 </div>
 
                 <hr className='mt-10' />
                 <h2 className="text-txtGreen text-2xl font-semibold text-left my-10">Одноразовые стерильные перевязочные материалы</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-5 xl:grid-cols-4 justify-items-center">
-                    {/* <Products /> */}
+                    <TellaSoft />
                 </div>
             </div>
             <div className="container mx-auto px-4 max-w-[1200px]">

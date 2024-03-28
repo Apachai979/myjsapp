@@ -21,3 +21,20 @@ export const products = [
     ]
   }
 ]
+
+export const neosets = [
+  { name: 'Набор для снятия швов', srcImg: '', href: '#' },
+  { name: 'Набор для обработки ран', srcImg: '', href: '#' },
+  { name: 'Набор для забора донорской крови', srcImg: '', href: '#' },
+  { name: 'Набор для забора крови из вены', srcImg: '', href: '#' },
+  { name: 'Набор для катетеризации мочевого пузыря', srcImg: '', href: '#' },
+  { name: 'Набор для катетеризации центральных вен', srcImg: '', href: '#' },
+  { name: 'Набор для локальной анестезии', srcImg: '', href: '#' },
+  { name: 'Набор для гемодиализа', srcImg: '', href: '#' },
+]
+
+export const tellasoft = [
+  { name: 'Марлевые салфетки TellaLux', srcImg: '', href: '#' },
+  { name: 'Марлевые тампоны SoftLux', srcImg: '', href: '#' },
+  { name: 'Марлевые тампоны SoftLux с рентгенконтрастной нитью', srcImg: '', href: '#' },
+]
