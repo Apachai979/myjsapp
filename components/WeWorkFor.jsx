@@ -67,26 +67,10 @@ export default function WeWorkFor() {
             <div className='flex flex-col w-full py-6 px-5 justify-center items-center bg-mainGreen rounded-2xl lg:hidden'>
                 <h1 className='text-2xl text-white font-semibold text-center tracking-wide pb-3'>Для кого мы работаем</h1>
                 <div className='flex flex-col md:flex-row w-full justify-between md:items-center md:space-x-1 space-y-2 md:space-y-0'>
-                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Специалист
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6 fill-none stroke-current md:hidden">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </Link>
-                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen whitespace-nowrap transition duration-300">Главный врач
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6 fill-none stroke-current md:hidden">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </Link>
-                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Пациент
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6 fill-none stroke-current md:hidden">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </Link>
-                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Партнер
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" className="w-6 h-6 fill-none stroke-current md:hidden">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </Link>
+                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Специалист</Link>
+                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen whitespace-nowrap transition duration-300">Главный врач</Link>
+                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Пациент</Link>
+                    <Link href="/" className="flex-1 flex justify-between bg-backMiddle px-8 py-4 text-white tracking-wide text-xl md:text-center rounded-2xl hover:bg-white hover:text-txtGreen transition duration-300">Партнер</Link>
                 </div>
             </div>
         </div>

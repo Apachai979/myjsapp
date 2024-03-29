@@ -131,8 +131,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="my-10 py-10 flex flex-col justify-center items-center">
             <h1 className='lg:indent-96 text-3xl text-center lg:text-5xl font-semibold text-txtMiddle/50 '>Мы оказываем поддержку <span className='text-mainGreen'>гемодиализным центрам</span> Западной Сибири и проектам в области медицинского образования
-              <svg fill="none" viewBox="0 0 24 24" className="w-12 h-12 stroke-1 stroke-txtGreen/30 inline fill-mainGreen hover:scale-125 transition-transform duration-700 ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              <svg fill="none" viewBox="0 0 24 24" className="w-12 h-12 stroke-1 stroke-txtGreen/30 inline fill-mainGreen hover:scale-125 transition-transform duration-700 cursor-pointer">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
               </svg>
             </h1>
             <Link href="/about" className='mt-4 lg:self-end text-center border-[3px] border-mainGreen bg-white px-10 py-3 rounded-full text-mainGreen hover:text-white hover:bg-mainGreen text-2xl transition duration-300'>Подробнее</Link>
