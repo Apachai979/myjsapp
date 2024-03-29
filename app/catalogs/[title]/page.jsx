@@ -2,9 +2,21 @@ import ButtonMain from "@/components/buttons/ButtonMain";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Neoset({ params }) {
+async function getNeoset(titleName) {
+    const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
+
+    if (!response.ok) throw new Error("Unable to fetch Neosets.")
+
+    return response.json()
+}
+
+export default async function Neoset({ params }) {
+
+    const neoset = await getNeoset(params.title)
+
     return (
         <>
+            <h1>{params.title}</h1>
             <div className="container mx-auto px-4 max-w-[1200px] my-10">
                 <div className="flex flex-col space-y-5 items-center lg:flex-row-reverse lg:space-y-0 lg:items-start">
                     <div className="flex">
@@ -17,8 +29,8 @@ export default function Neoset({ params }) {
                         </Image >
                     </div>
                     <div className="flex flex-col flex-1">
-                        <Link href="/"><h1 className="text-5xl text-txtGreen font-semibold">Набор NeoSet для снятия швов</h1></Link>
-                        <p className="text-txtGreen text-2xl mt-5">Готовый к использованию стерильный набор инструментов и перевязочных материалов, предназначенный для снятия швов.</p>
+                        <Link href="/"><h1 className="text-5xl text-txtGreen font-semibold">{neoset.name}</h1></Link>
+                        <p className="text-txtGreen text-2xl mt-5">{neoset.description}</p>
                         <p className="text-txtGreen font-semibold text-xl mt-5">Скачать:</p>
                         <p><Link href="/" className="inline text-mainGreen text-lg font-semibold hover:text-night_green ">Регистрационное удостоверение</Link></p>
                         <p><Link href="/" className="inline-flex text-mainGreen text-lg font-semibold hover:text-night_green">Инструкция по применению </Link></p>
