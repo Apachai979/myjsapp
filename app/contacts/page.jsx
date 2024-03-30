@@ -1,4 +1,5 @@
 import FormContact from "@/components/forms/FormContact"
+import Test from "@/components/Test"
 
 
 export default function Contacts() {
@@ -24,7 +25,7 @@ export default function Contacts() {
                     </div>
 
                     <FormContact />
-
+                    {/* <Test /> */}
                 </div>
 
             </div >

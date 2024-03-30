@@ -16,7 +16,6 @@ export default async function Neoset({ params }) {
 
     return (
         <>
-            <h1>{params.title}</h1>
             <div className="container mx-auto px-4 max-w-[1200px] my-10">
                 <div className="flex flex-col space-y-5 items-center lg:flex-row-reverse lg:space-y-0 lg:items-start">
                     <div className="flex">
