@@ -12,7 +12,7 @@ export default function FormContact() {
 
     function handleCheckerName(e) {
 
-        const regex = /^[A-Za-zА-Яа-яЁё]{1,}$/;
+        const regex = /^[A-Za-zА-Яа-яЁё]{2,}$/;
         const result = regex.test(e.target.value);
         // console.log(!result);
         setHasErrorName(result);
