@@ -71,7 +71,7 @@ export default function Carousel() {
                             className={
                                 slide === el.id
                                     ? 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-1 duration-700 ease-in'
-                                    : 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-0 duration-700'
+                                    : 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-30 transition opacity-0 duration-700'
                             }
                         >
                             <h1 className="text-white pb-9 font-semibold text-4xl">
