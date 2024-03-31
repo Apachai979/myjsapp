@@ -79,7 +79,7 @@ export default function Carousel() {
                             </h1>
                             <Link
                                 href={el.href}
-                                className="text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
+                                className="text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 border-2 border-primary_green hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
                             >
                                 {el.buttonName}
                             </Link>
