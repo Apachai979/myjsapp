@@ -50,7 +50,7 @@ export default function Carousel() {
                 <Image
                     src={sliderShape}
                     alt=""
-                    className="absolute left-0 h-120 w-auto z-20"
+                    className="absolute left-0 h-120 w-auto z-20 transition-all duration-1000"
                     width={1280}
                     height={720}
                     priority>
@@ -59,7 +59,7 @@ export default function Carousel() {
                 <Image
                     src={slides[slide].scr}
                     alt="Neoset"
-                    className="absolute right-0 object-cover h-120 w-auto z-10"
+                    className="absolute right-0 object-cover h-120 w-auto z-10 transition-all duration-1000"
                     width={1043}
                     height={569}
                     priority>

@@ -63,7 +63,7 @@ export default function FormContact() {
                 </div>
 
                 <div className="relative">
-                    <input id="your_phone_number" type="tel" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " onFocus={(e) => e.target.value === "" ? e.target.value = "+7 " : null} onChange={handleCheckerTel} />
+                    <input id="your_phone_number" type="text" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " onFocus={(e) => e.target.value === "" ? e.target.value = "+7 " : null} onChange={handleCheckerTel} />
                     <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-focus:translate-y-1.5 duration-300 transform translate-y-1.5 peer-placeholder-shown:translate-y-0">
                         <FaPhone />
                     </div>

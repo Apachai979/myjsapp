@@ -20,7 +20,7 @@ export default function Contacts() {
                             <p>+7 (985) 231-01-11</p>
                         </div>
 
-                        <p className="text-base text-primary_green">info@onestep.su</p>
+                        <p className="text-base text-primary_green"> <a href="mailto:info@onestep.su">info@onestep.su</a></p>
 
                     </div>
 
