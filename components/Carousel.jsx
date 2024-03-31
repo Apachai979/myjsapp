@@ -63,21 +63,21 @@ export default function Carousel() {
 
     return (
         <div className="container mx-auto px-4">
-            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-30 drop-shadow-md  ">
+            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-30 drop-shadow-md ">
                 {slides.map(el => {
                     return (
                         <div
                             key={el.id}
-                            className={slide === el.id ? "absolute flex left-10 top-24 flex-col justify-center w-[370px] z-30 font-semibold text-4xl transition opacity-1 duration-700" : "absolute flex left-10 top-24 flex-col justify-center w-[370px] h-[250px] z-30 font-semibold text-4xl space-y-7 transition opacity-0 duration-700"}
+                            className={slide === el.id ? "absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-1 duration-700 ease-in" : "absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-0 duration-700"}
                         >
                             <h1
-                                className='flex text-white py-7'
+                                className='text-white pb-9 font-semibold text-4xl'
                             >
                                 {el.description}
                             </h1>
                             <Link
                                 href={el.href}
-                                className='flex px-10 py-3 bg-white rounded-full z-30 justify-center text-stone-700 text-xl items-center hover:text-white hover:bg-primary_green hover:border-2 hover:border-white'
+                                className='text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 hover:text-white hover:bg-primary_green hover:border-2 hover:border-white'
                             >
                                 {el.buttonName}
                             </Link>
@@ -126,7 +126,7 @@ export default function Carousel() {
                     <div className="flex space-x-3">
                         <button
                             onClick={previousSlide}
-                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleLeft
                                 className="absolute fill-white hover:fill-stone-300 transition duration-300"
@@ -136,7 +136,7 @@ export default function Carousel() {
 
                         <button
                             onClick={nextSlide}
-                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-30 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleRight
                                 className="absolute fill-white hover:fill-stone-300 transition duration-300"
@@ -154,8 +154,8 @@ export default function Carousel() {
                                     onClick={() => showSlide(elem.id)}
                                     className={
                                         isActive
-                                            ? 'w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer z-30'
-                                            : 'w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-30'
+                                            ? 'w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer z-50'
+                                            : 'w-3 h-3 rounded-full border-2 border-white hover:bg-white cursor-pointer z-50'
                                     }
                                 ></button>
                             )
