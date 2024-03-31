@@ -35,7 +35,7 @@ export default async function Neoset({ params }) {
                         <p><Link href="/" className="inline-flex text-mainGreen text-lg font-semibold hover:text-night_green">Инструкция по применению </Link></p>
                         <p><Link href="/" className="text-mainGreen text-lg font-semibold hover:text-night_green">Видео-инструкция</Link></p>
                         <div className="mt-10">
-                            <ButtonMain url="/" textButton="Получить консультацию" />
+                            <ButtonMain url="/">Получить консультацию</ButtonMain>
                         </div>
                     </div>
 
