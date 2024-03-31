@@ -68,31 +68,24 @@ export default function Carousel() {
                     return (
                         <div
                             key={el.id}
-                            className={slide === el.id ? "absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-1 duration-700 ease-in" : "absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-0 duration-700"}
+                            className={
+                                slide === el.id
+                                    ? 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-1 duration-700 ease-in'
+                                    : 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-0 duration-700'
+                            }
                         >
-                            <h1
-                                className='text-white pb-9 font-semibold text-4xl'
-                            >
+                            <h1 className="text-white pb-9 font-semibold text-4xl">
                                 {el.description}
                             </h1>
                             <Link
                                 href={el.href}
-                                className='text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 hover:text-white hover:bg-primary_green hover:border-2 hover:border-white'
+                                className="text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
                             >
                                 {el.buttonName}
                             </Link>
                         </div>
                     )
                 })}
-                {/* <h1 className="flex text-white transition-all duration-1000">
-                        {slides[slide - 1].description}
-                    </h1>
-                    <Link
-                        href={slides[slide - 1].href}
-                        className="flex w-[250px] h-14 bg-white rounded-full z-30 justify-center text-stone-700 text-xl items-center hover:text-white hover:bg-primary_green hover:border-2 hover:border-white transition duration-300"
-                    >
-                        {slides[slide - 1].buttonName}
-                    </Link> */}
 
                 <Image
                     src={sliderShape}
@@ -109,7 +102,6 @@ export default function Carousel() {
                             key={el.id}
                             src={el.src}
                             alt="Neoset"
-                            // className="absolute right-0 object-cover h-120 w-auto z-10  transition duration-1000"
                             className={
                                 slide === el.id
                                     ? 'absolute right-0 object-cover h-120 w-auto z-10 opacity-1 transition duration-1000'
