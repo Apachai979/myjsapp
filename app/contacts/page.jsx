@@ -1,4 +1,4 @@
-import FormContact from "@/components/forms/FormContact"
+import FormContact from "@/components/Forms/FormContact"
 import Test from "@/components/Test"
 
 
