@@ -63,7 +63,7 @@ export default function Carousel() {
 
     return (
         <div className="container mx-auto px-4">
-            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-30 drop-shadow-md ">
+            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-0 drop-shadow-md ">
                 {slides.map(el => {
                     return (
                         <div
@@ -118,7 +118,7 @@ export default function Carousel() {
                     <div className="flex space-x-3">
                         <button
                             onClick={previousSlide}
-                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleLeft
                                 className="absolute fill-white hover:fill-stone-300 transition duration-300"
@@ -128,7 +128,7 @@ export default function Carousel() {
 
                         <button
                             onClick={nextSlide}
-                            className="flex h-8 w-8 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleRight
                                 className="absolute fill-white hover:fill-stone-300 transition duration-300"

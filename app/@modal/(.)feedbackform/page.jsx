@@ -50,8 +50,7 @@ export default function FeedbackForm() {
     return (
         <Modal>
             <section className="flex justify-center items-center h-screen">
-                <h1>this is modal!</h1>
-                <form onSubmit={handleSubmit} className=" space-y-4 w-96">
+                <form onSubmit={handleSubmit} className=" space-y-4 w-96 ">
 
                     <div className="relative">
                         {/* <h1>{firstName}</h1> */}
