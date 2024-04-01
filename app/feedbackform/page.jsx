@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 
-export default function FormContact() {
+export default function FeedbackForm() {
 
     const [hasErrorEmail, sethasErrorEmail] = useState(true)
     const [hasErrorName, setHasErrorName] = useState(true)
@@ -47,8 +47,7 @@ export default function FormContact() {
     }
 
     return (
-        <>
-
+        <section className="flex justify-center items-center h-screen">
             <form onSubmit={handleSubmit} className=" space-y-4 w-96">
 
                 <div className="relative">
@@ -84,7 +83,6 @@ export default function FormContact() {
                     Отправить
                 </button>
             </form>
-
-        </>
+        </section>
     )
 }
