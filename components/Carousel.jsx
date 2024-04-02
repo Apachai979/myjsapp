@@ -47,42 +47,42 @@ export default function Carousel() {
 
     const [slide, setSlide] = useState(1)
 
-    function showSlide(numberSlide) {
-        setSlide(numberSlide)
-    }
-
-    let previousSlide = () => {
+    const previousSlide = () => {
         if (slide == slides[0].id) setSlide(slides.length)
         else setSlide(slide - 1)
     }
 
-    let nextSlide = () => {
+    const nextSlide = () => {
         if (slide == slides[slides.length - 1].id) setSlide(slides[0].id)
         else setSlide(slide + 1)
     }
 
     return (
         <div className="container mx-auto px-4">
-            <div className="w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-0 drop-shadow-md ">
+            <div className="max-w-[1160px] h-120 justify-center m-auto my-5 relative rounded-3xl overflow-hidden z-0 drop-shadow-md ">
                 {slides.map(el => {
                     return (
                         <div
                             key={el.id}
                             className={
                                 slide === el.id
-                                    ? 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-40 transition opacity-1 duration-700 ease-in'
-                                    : 'absolute left-10 flex flex-col justify-center w-[370px] h-[460px] z-30 transition opacity-0 duration-700'
+                                    ? 'absolute lg:left-8 bottom-0 lg:top-0 lg:bottom-0 flex lg:flex-col flex-row w-full px-5 lg:mx-0 lg:w-[450px] h-40 lg:h-120 z-40 transition opacity-1 duration-700 ease-in'
+                                    : 'absolute lg:left-8 bottom-0 lg:top-0 lg:bottom-0 flex lg:flex-col flex-row w-full px-5 lg:mx-0 lg:w-[450px] h-40 lg:h-120 z-30 transition opacity-0 duration-700'
                             }
                         >
-                            <h1 className="text-white pb-9 font-semibold text-4xl">
-                                {el.description}
-                            </h1>
-                            <Link
-                                href={el.href}
-                                className="text-center py-3 w-72 bg-white rounded-full text-stone-700 text-xl transition duration-300 border-2 border-primary_green hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
-                            >
-                                {el.buttonName}
-                            </Link>
+                            <div className='flex lg:h-1/2 grow lg:justify-normal justify-center '>
+                                <h1 className="text-white font-semibold text-3xl lg:text-4xl self-center lg:self-end pb-2 lg:pb-0">
+                                    {el.description}
+                                </h1>
+                            </div>
+                            <div className='flex lg:h-1/2 grow justify-center lg:justify-normal'>
+                                <Link
+                                    href={el.href}
+                                    className="self-center lg:self-start lg:mt-5 text-center py-3 px-6 lg:w-64 bg-white rounded-full text-stone-700 text-xl transition duration-300 border-2 border-primary_green hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
+                                >
+                                    {el.buttonName}
+                                </Link>
+                            </div>
                         </div>
                     )
                 })}
@@ -90,11 +90,14 @@ export default function Carousel() {
                 <Image
                     src={sliderShape}
                     alt=""
-                    className="absolute left-0 h-120 w-auto z-20"
+                    className="absolute lg:left-0 invisible lg:visible h-120 w-auto z-20"
                     width={1280}
                     height={720}
                     priority
                 />
+                <div className='absolute left-0 bottom-0 w-full h-40 bg-primary_green z-20 visible lg:invisible'>
+
+                </div>
 
                 {slides.map(el => {
                     return (
@@ -114,8 +117,8 @@ export default function Carousel() {
                     )
                 })}
 
-                <div className="absolute bottom-6 left-10 flex items-center justify-center space-x-5">
-                    <div className="flex space-x-3">
+                <div className="absolute bottom-2 lg:bottom-6 left-1/3 lg:left-10 flex items-center justify-center space-x-5">
+                    <div className="flex space-x-3 ">
                         <button
                             onClick={previousSlide}
                             className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
@@ -143,7 +146,7 @@ export default function Carousel() {
                             return (
                                 <button
                                     key={elem.id}
-                                    onClick={() => showSlide(elem.id)}
+                                    onClick={() => setSlide(elem.id)}
                                     className={
                                         isActive
                                             ? 'w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer z-50'
