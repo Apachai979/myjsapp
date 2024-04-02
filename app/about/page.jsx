@@ -1,4 +1,4 @@
-import ButtonExtra from "@/components/Buttons/ButtonExtra"
+import ButtonExtra from "@/components/buttons/ButtonExtra"
 import Image from "next/image"
 
 export default function About() {
