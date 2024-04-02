@@ -117,11 +117,11 @@ export default function Carousel() {
                     )
                 })}
 
-                <div className="absolute bottom-2 lg:bottom-6 left-1/3 lg:left-10 flex items-center justify-center space-x-5">
-                    <div className="flex space-x-3 ">
+                <div className="absolute bottom-0 lg:bottom-6 lg:left-10 flex items-center justify-center lg:space-x-5 w-full lg:w-auto">
+                    <div className="flex lg:space-x-3 lg:visible invisible w-0 lg:w-auto">
                         <button
                             onClick={previousSlide}
-                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className=" flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleLeft
                                 className="absolute fill-white hover:fill-stone-300 transition duration-300"
@@ -140,7 +140,7 @@ export default function Carousel() {
                         </button>
                     </div>
 
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-2 justify-self-center">
                         {slides.map(elem => {
                             const isActive = slide === elem.id
                             return (
