@@ -24,6 +24,7 @@ export default function Academy() {
 
             <nav className="p-5 bg-white shadow md:flex md:items-center md:justify-between h-screen">
                 <div className="flex justify-between items-center ">
+
                     <span className="text-2xl font-[Poppins] cursor-pointer">
                         <img className="h-10 inline"
                             src="https://tailwindcss.com/_next/static/media/social-square.b622e290e82093c36cca57092ffe494f.jpg" />
