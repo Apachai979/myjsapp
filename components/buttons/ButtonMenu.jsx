@@ -1,5 +1,5 @@
 'use client'
-
+import MobileMenu from '../MobileMenu'
 import { useEffect, useState } from 'react'
 
 export default function ButtonMenu() {
@@ -7,12 +7,16 @@ export default function ButtonMenu() {
     // useEffect(() => {
     //     console.log(isActive)
     // }, [isActive])
+    function handleClick() {
+        setIsActive(prev => !prev)
+
+    }
 
     return (
         <>
             <div className=''>
                 <button
-                    onClick={() => setIsActive(prev => !prev)}
+                    onClick={handleClick}
                     className="relative w-[50px] p-1 h-[40px] group cursor-pointer"
                 >
                     <div
@@ -103,7 +107,9 @@ export default function ButtonMenu() {
                             }
                         ></div>
                     </div>
+                    <MobileMenu open={isActive}></MobileMenu>
                 </button>
+
             </div>
         </>
     )

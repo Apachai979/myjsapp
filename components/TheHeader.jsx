@@ -31,9 +31,12 @@ export default function TheHeader() {
                             <p className="lg:text-lg text-base font-semibold">+7 (495) 927-48-47</p>
                         </div>
 
-                        <details className="sm920:hidden">
+
+                        <div className="sm920:hidden">
                             <ButtonMenu />
-                        </details>
+                        </div>
+
+
 
                     </div>
                 </div>
