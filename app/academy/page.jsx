@@ -1,5 +1,5 @@
 'use client'
-import ButtonMenu from "@/components/buttons/ButtonMenu";
+import ButtonMenu from "@/components/buttons/AnimationMenuButton";
 import { useRef } from "react";
 import { IoIosMenu } from "react-icons/io";
 
