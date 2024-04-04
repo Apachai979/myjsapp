@@ -23,7 +23,7 @@ export default function TheFooter() {
                         <Link href="/" className="hover:text-mainGreen focus:text-mainGreen">Главная</Link>
                         <Link href="/partners" className="hover:text-mainGreen focus:text-mainGreen">Партнерам</Link>
                         <Link href="/about" className="hover:text-mainGreen focus:text-mainGreen">Специалисту</Link>
-                        <Link href="/manufacture" className="hover:text-mainGreen focus:text-mainGreen whitespace-nowrap">Главному врачу</Link>
+                        <Link href="/partners/doctors" className="hover:text-mainGreen focus:text-mainGreen whitespace-nowrap">Главному врачу</Link>
                     </div>
                     <div className="flex-auto flex justify-center space-x-3 md:space-x-0 md:flex-col text-lg">
                         <Link href="/documents" className="hover:text-mainGreen focus:text-mainGreen whitespace-nowrap">О Компании</Link>
@@ -33,8 +33,8 @@ export default function TheFooter() {
                     </div>
                     <div className="flex-auto flex justify-center space-x-3 md:space-x-0 md:flex-col text-lg">
                         <Link href="/about" className="hover:text-mainGreen focus:text-mainGreen">Каталог</Link>
-                        <Link href="/manufacture" className="hover:text-mainGreen focus:text-mainGreen">Документы</Link>
-                        <Link href="/documents" className="hover:text-mainGreen focus:text-mainGreen">Производство</Link>
+                        <Link href="/documents" className="hover:text-mainGreen focus:text-mainGreen">Документы</Link>
+                        <Link href="/manufacture" className="hover:text-mainGreen focus:text-mainGreen">Производство</Link>
                         <Link href="/academy" className="hover:text-mainGreen focus:text-mainGreen">Вакансии</Link>
                     </div>
                     <div className="flex-auto pt-2 md:pt-0">

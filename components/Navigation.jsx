@@ -18,7 +18,7 @@ export default function Navigation() {
     const [isActive, setIsActive] = useState(true)
     const ulRef = useRef()
 
-    console.log('Render navigation')
+    // console.log('Render navigation')
     useEffect(() => {
         console.log('Render Effect')
         if (!isActive) {
@@ -31,7 +31,7 @@ export default function Navigation() {
 
     }, [isActive])
 
-    const pathname = ''
+    const pathname = usePathname()
 
     return (
         <>
@@ -61,7 +61,7 @@ export default function Navigation() {
             </div>
             <button
                 onClick={() => setIsActive(prev => !prev)}
-                className="relative w-[46px] h-[40px] group cursor-pointer block sm920:hidden "
+                className="relative w-[44px] h-[40px] group cursor-pointer block sm920:hidden "
             >
                 <AnimationMenuButton isActive={isActive} />
             </button>

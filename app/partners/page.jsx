@@ -1,4 +1,6 @@
 import ConnectWithUs from '@/components/ConnectWithUs';
+import Block from '@/components/Block';
+import NavPartners from '@/components/NavPartners';
 
 export default function Partners() {
 
@@ -10,7 +12,7 @@ export default function Partners() {
 
     return (
         <>
-            <div className="container mx-auto px-4 max-w-[1200px]">
+            <Block>
                 <div className="flex justify-start items-center my-10 ">
                     <h1 className="text-4xl text-mainGreen font-semibold">Выгоды сотрудничества <span className="text-txtGreen">с компанией OneStep</span></h1>
                 </div>
@@ -30,7 +32,7 @@ export default function Partners() {
                     })}
 
                 </div>
-            </div >
+            </Block>
 
             {/* nextblock */}
             <div className="container mx-auto px-4 max-w-[1200px] mt-14" >
@@ -69,6 +71,7 @@ export default function Partners() {
 
             {/* nextblock */}
             < ConnectWithUs title='Стать нашим партнером легко, работать с нами выгодно!' url='/' textButton='Связаться со специалистом' />
+            <NavPartners></NavPartners>
         </>
     )
 }

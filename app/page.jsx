@@ -112,9 +112,9 @@ export default function Home() {
         <div className="bg-white drop-shadow-lg rounded-3xl flex flex-col space-y-5 lg:space-y-0 lg:flex-row justify-center items-center p-14 w-[1000px] lg:shrink xl:w-[1200px]">
           <div className="flex-1 flex justify-center">
             <Image
-              src="/home/imageLast.jpg"
+              src="/home/worldexp.png"
               alt="Neoset"
-              className="rounded-3xl object-cover object-center w-[300px] h-[300px]"
+              className="rounded-3xl object-cover object-center w-[330px] h-[330px]"
               width={1280}
               height={720}>
             </Image>
