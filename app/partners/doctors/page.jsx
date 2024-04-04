@@ -14,7 +14,7 @@ const arrControlTask = [
 export default function Doctors() {
     return (
         <>
-            <div className='container mx-auto px-4 max-w-[1200px] my-10'>
+            <div className='container mx-auto px-4 max-w-[1200px] py-10'>
                 <h1 className="text-4xl font-semibold py-6 text-center sm:text-left">Главному врачу клиники</h1>
                 <div className="flex items-center space-x-10 ">
                     <Image
@@ -31,31 +31,33 @@ export default function Doctors() {
                     </div>
                 </div>
             </div>
-            <div className='container mx-auto px-4 max-w-[1200px] my-10'>
-                <div className="md:text-right text-center">
-                    <h1 className="text-3xl font-semibold py-1">Возможности <span className="text-primary_green">для решения</span> управленческих задач</h1>
-                    <p className="text-xl">с внедрением готовых cтерильных <br />процедурных наборов NeoSet</p>
-                </div>
-                <div className="flex mt-8">
-                    <div className="grid  md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-8 ">
-                        {arrControlTask.map((elem) => {
-                            return (
-                                <Link href="" key={elem.title} className=" flex group">
-                                    <div className="flex flex-col justify-between bg-white rounded-3xl shadow-md p-6 group-hover:bg-stone-200 transition duration-200 ease-in h-full">
-                                        <div>
-                                            <h2 className="text-lg font-semibold pb-3">
-                                                {elem.title}
-                                            </h2>
-                                            <p className="text-lg">{elem.description}</p>
+            <div className="bg-gray-200 py-8">
+                <div className='container mx-auto px-4 max-w-[1200px]'>
+                    <div className="md:text-right text-center">
+                        <h1 className="text-3xl font-semibold py-1">Возможности <span className="text-primary_green">для решения</span> управленческих задач</h1>
+                        <p className="text-xl">с внедрением готовых cтерильных <br />процедурных наборов NeoSet</p>
+                    </div>
+                    <div className="flex mt-8">
+                        <div className="grid  md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-8 ">
+                            {arrControlTask.map((elem) => {
+                                return (
+                                    <Link href="" key={elem.title} className=" flex group">
+                                        <div className="flex flex-col justify-between bg-white rounded-3xl shadow-md p-6 group-hover:bg-gray-100 transition duration-200 ease-in h-full">
+                                            <div>
+                                                <h2 className="text-lg font-semibold pb-3">
+                                                    {elem.title}
+                                                </h2>
+                                                <p className="text-lg">{elem.description}</p>
+                                            </div>
+                                            <div className="flex items-center pt-4 ">
+                                                <p className=" text-base text-primary_green transition duration-200 ease-in group-hover:scale-105">{elem.info}</p> <HiMiniArrowLongRight size={26} className="fill-primary_green pt-1" />
+                                            </div>
                                         </div>
-                                        <div className="flex items-center pt-4 ">
-                                            <p className=" text-base text-primary_green transition duration-200 ease-in group-hover:scale-105">{elem.info}</p> <HiMiniArrowLongRight size={26} className="fill-primary_green pt-1" />
-                                        </div>
-                                    </div>
-                                </Link>
-                            )
-                        })}
+                                    </Link>
+                                )
+                            })}
 
+                        </div>
                     </div>
                 </div>
             </div>

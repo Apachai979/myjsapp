@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const arrPartners = [
     { href: '/', title: 'Специалисту' },
-    { href: '/', title: 'Главному врачу' },
+    { href: '/partners/doctors', title: 'Главному врачу' },
     { href: '/partners', title: 'Партнеру' },
     { href: '/', title: 'Пациенту' },
 ]
