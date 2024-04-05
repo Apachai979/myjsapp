@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { MdArrowRightAlt } from "react-icons/md";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
+import { BsCheckLg } from "react-icons/bs";
+import NavPartners from "@/components/NavPartners";
+import Block from "@/components/Block";
 
 const arrControlTask = [
     { title: 'Бережливые технологии в вашей клинике', description: 'Применение наборов NeoSet полностью отвечают задачам федерального проекта «Новая модель медицинской организации" по внедрению бережливых технологий в здравоохранении.', info: 'Подробнее' },
@@ -11,6 +13,28 @@ const arrControlTask = [
     { title: 'Учет, контроль и документирование', description: 'Процессы учета расходных материалов, медицинских манипуляций и их документирование сведены к минимуму.', info: 'Подробнее' },
     { title: 'Безопасное хранение и утилизация', description: 'Надежность стерильной упаковки и гарантия производителя позволяют не думать о безопасности хранения готовых стерильных наборов. Процесс утилизации сводится к минимуму.', info: 'Подробнее' }
 ]
+
+const arrProducts = [
+    { name: 'снятия швов', description: '', href: '#' },
+    { name: 'обработки ран', description: '', href: '#' },
+    { name: 'забора донорской крови', description: '', href: '#' },
+    { name: 'забора крови из вены', description: '', href: '#' },
+    { name: 'катетеризации мочевого пузыря', description: '', href: '#' },
+    { name: 'катетеризации центральных вен', description: '', href: '#' },
+    { name: 'локальной анестезии', description: '', href: '#' },
+    { name: 'гемодиализа (начало/ завершение)', description: '', href: '#' },
+]
+
+const arrFlow = [
+    { title: 'Хирургия', has: [1, 1, 0, 0, 0, 0, 0, 0] },
+    { title: 'Травматология', has: [1, 1, 0, 1, 0, 0, 1, 0] },
+    { title: 'Урология', has: [0, 0, 0, 0, 1, 0, 1, 0] },
+    { title: 'Акушерство/ Гинекология', has: [1, 0, 0, 0, 1, 1, 1, 0] },
+    { title: 'Анестезиология/ реаниматология', has: [0, 0, 0, 1, 1, 1, 1, 0] },
+    { title: 'Трансфузиология/ нефрология', has: [0, 0, 1, 1, 0, 0, 0, 1] },
+    { title: 'Лабораторная диагностика', has: [0, 0, 0, 1, 0, 0, 0, 0] }
+]
+
 export default function Doctors() {
     return (
         <>
@@ -61,6 +85,45 @@ export default function Doctors() {
                     </div>
                 </div>
             </div>
+
+            <Block>
+                <div className="py-8">
+                    <h1 className="text-3xl pb-5">Где применяются наборы <span className="text-primary_green">NeoSet</span></h1>
+                    <div className="rounded-2xl overflow-hidden ">
+                        <table className="table-auto text-left">
+                            <thead>
+                                <tr className="border border-b-gray-600 border-t-0 border-l-0 border-r-0">
+                                    <th className="px-2">Набор NeoSet для:</th>
+                                    {arrProducts.map((el) => {
+                                        return (
+                                            <th key={el.name} className="px-2 text-primary_green font-semibold" >{el.name}</th>
+                                        )
+                                    })}
+                                </tr>
+                            </thead>
+                            <tbody className="">
+                                {arrFlow.map((el) => {
+                                    return (
+                                        <tr key={el.title} className=" border border-b-gray-300 border-t-0 border-l-0 border-r-0 last:border-0 odd:bg-white even:bg-slate-50 text-base">
+                                            <td className="pt-1 pb-2 pl-4 ">{el.title}</td>
+                                            {el.has.map((elem) => {
+                                                return (
+                                                    <td className="">
+                                                        <div className="flex justify-center">
+                                                            {elem === 1 && <BsCheckLg />}
+                                                        </div></td>
+                                                )
+                                            })}
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </Block >
+
+            <NavPartners />
         </>
     )
 }

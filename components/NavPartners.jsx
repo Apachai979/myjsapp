@@ -4,10 +4,10 @@ import Block from './Block'
 import Link from 'next/link'
 
 const arrPartners = [
-    { href: '/', title: 'Специалисту' },
+    { href: '/partners/specialist', title: 'Специалисту' },
     { href: '/partners/doctors', title: 'Главному врачу' },
     { href: '/partners', title: 'Партнеру' },
-    { href: '/', title: 'Пациенту' },
+    { href: '/partners/patient', title: 'Пациенту' },
 ]
 
 export default function NavPartners() {
