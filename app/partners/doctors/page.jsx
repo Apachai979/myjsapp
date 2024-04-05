@@ -43,7 +43,7 @@ export default function Doctors() {
     const dialog = useRef()
 
     function handleClick() {
-        dialog.current.showModal()
+        dialog.current.show()
     }
 
     return (
@@ -99,18 +99,12 @@ export default function Doctors() {
                             </dialog>
                         </DialogModal> */}
 
-                        <dialog ref={dialog} className="w-96 h-96 bg-red-400 ">
-                            <div
-
-                                className="fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto my-auto backdrop-blur-sm bg-black/60"
-
-                            >
-                                <div
-
-                                    className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-10 rounded-xl overflow-hidden "
-                                >
+                        <dialog ref={dialog}>
+                            <div className="fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto my-auto backdrop-blur-sm bg-black/60">
+                                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-10 rounded-xl overflow-hidden ">
 
                                     <h1>hello world</h1>
+                                    <button onClick={() => dialog.current.close()}>close</button>
 
                                 </div>
                             </div>
