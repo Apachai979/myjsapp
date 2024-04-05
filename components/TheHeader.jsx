@@ -7,7 +7,7 @@ export default function TheHeader() {
     console.log('Render')
 
     return (
-        <header className="sticky top-0 sm920:bg-body_bg z-50 bg-white">
+        <header className="sticky top-0 sm920:bg-body_bg z-10 bg-white">
             <nav className="flex justify-center">
                 <div className=" px-6 sm920:px-1 flex flex-1 justify-between max-w-[1200px] items-center  min-h-16 whitespace-nowrap sm920:bg-body_bg bg-white ">
 

@@ -15,14 +15,14 @@ const arrControlTask = [
 ]
 
 const arrProducts = [
-    { name: 'снятия швов', description: '', href: '#' },
-    { name: 'обработки ран', description: '', href: '#' },
-    { name: 'забора донорской крови', description: '', href: '#' },
-    { name: 'забора крови из вены', description: '', href: '#' },
-    { name: 'катетеризации мочевого пузыря', description: '', href: '#' },
-    { name: 'катетеризации центральных вен', description: '', href: '#' },
-    { name: 'локальной анестезии', description: '', href: '#' },
-    { name: 'гемодиализа (начало/ завершение)', description: '', href: '#' },
+    { name: 'Набор для снятия швов', href: '/catalogs/dlya-snyatiya-shvov' },
+    { name: 'Набор для обработки ран', href: '/catalogs/dlya-obrabotki-ran' },
+    { name: 'Набор для забора донорской крови', href: '/catalogs/dlya-zabora-donorskoj-krovi' },
+    { name: 'Набор для забора крови из вены', href: '/catalogs/dlya-zabora-krovi-iz-veny' },
+    { name: 'Набор для катетеризации мочевого пузыря', href: '/catalogs/dlya-kateterizacii-mochevogo-puzyrya' },
+    { name: 'Набор для катетеризации центральных вен', href: '/catalogs/dlya-kateterizacii-centralnyh-ven' },
+    { name: 'Набор для локальной анестезии', href: '/catalogs/dlya-lokalnoj-anestezii' },
+    { name: 'Набор для гемодиализа', href: '/catalogs/dlya-gemodializa' },
 ]
 
 const arrFlow = [
@@ -96,7 +96,10 @@ export default function Doctors() {
                                     <th className="px-2">Набор NeoSet для:</th>
                                     {arrProducts.map((el) => {
                                         return (
-                                            <th key={el.name} className="px-2 text-primary_green font-semibold" >{el.name}</th>
+                                            <th key={el.name} className="px-2 text-primary_green font-semibold" >
+                                                <Link href={el.href}>
+                                                    {el.name}
+                                                </Link></th>
                                         )
                                     })}
                                 </tr>

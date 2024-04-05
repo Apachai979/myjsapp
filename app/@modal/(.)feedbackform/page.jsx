@@ -49,9 +49,10 @@ export default function FeedbackForm() {
 
     return (
         <Modal>
-            <section className="flex justify-center items-center h-screen">
-                <form onSubmit={handleSubmit} className=" space-y-4 w-96 ">
+            <section className="flex justify-center items-center ">
 
+                <form onSubmit={handleSubmit} className=" space-y-4 w-96 ">
+                    <h1 className="text-2xl text-center pb-2">Задать вопрос специалисту:</h1>
                     <div className="relative">
                         {/* <h1>{firstName}</h1> */}
                         <input id="first_name" type="text" required className={hasErrorName ? "input border-gray-300  focus:border-primary_green peer " : "input border-red-500"} placeholder=" " onChange={handleCheckerName} />
@@ -81,7 +82,7 @@ export default function FeedbackForm() {
                         <label htmlFor="your_message" className="label">Ваше сообщение</label>
                     </div>
                     {/* type="submit" */}
-                    <button type="submit" className="py-4 bg-primary_green text-xl shadow-md text-white w-full rounded-full cursor-pointer transition duration-300 hover:bg-contrast_green">
+                    <button type="submit" className="py-4 bg-primary_green text-xl shadow-md text-white w-full rounded-full cursor-pointer transition duration-300 hover:bg-contrast_green active:shadow-inner active:shadow-gray-700/50">
                         Отправить
                     </button>
                 </form>
