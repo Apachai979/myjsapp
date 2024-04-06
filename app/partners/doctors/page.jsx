@@ -68,7 +68,7 @@ export default function Doctors() {
                         <div className="grid  md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-8 ">
                             {arrControlTask.map((elem) => {
                                 return (
-                                    <Link key={elem.title} href={`/partners/solutionsfordoctors/${elem.href}`} className=" flex group">
+                                    <Link key={elem.title} href={`/partners/doctors/${elem.href}`} className=" flex group">
                                         <div className="flex flex-col justify-between bg-white rounded-3xl shadow-md p-6 group-hover:bg-gray-100 transition duration-200 ease-in h-full">
                                             <div>
                                                 <h2 className="text-lg font-semibold pb-3">
