@@ -1,21 +1,19 @@
-'use client'
+// 'use client'
 import Image from "next/image"
 import Link from "next/link"
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { BsCheckLg } from "react-icons/bs";
 import NavPartners from "@/components/NavPartners";
 import Block from "@/components/Block";
-import { useRef } from "react";
-import DialogModal from "@/components/DialogModal";
 
 
 const arrControlTask = [
-    { title: 'Бережливые технологии в вашей клинике', description: 'Применение наборов NeoSet полностью отвечают задачам федерального проекта «Новая модель медицинской организации" по внедрению бережливых технологий в здравоохранении.', info: 'Подробнее' },
-    { title: 'Снижение трудозатрат', description: 'Экономия времени персонала на рутинные манипуляции повышает эффективность работы подразделения. Возможность проведения медицинских манипуляций без ассистента.', info: 'Пример' },
-    { title: 'Снижение затрат на стерилизацию', description: 'Высокотемпературная стерилизация способом автоклавирования - надежный, но затратный метод. При использовании готовых стерильных наборов - экономия очевидна.', info: 'Подробнее' },
-    { title: 'Профилактика ИСМП', description: 'Борьба с распространением инфекций, связанных с оказанием медицинской помощи, значительно эффективнее с внедрением готовых стерильных наборов.', info: 'Подробнее' },
-    { title: 'Учет, контроль и документирование', description: 'Процессы учета расходных материалов, медицинских манипуляций и их документирование сведены к минимуму.', info: 'Подробнее' },
-    { title: 'Безопасное хранение и утилизация', description: 'Надежность стерильной упаковки и гарантия производителя позволяют не думать о безопасности хранения готовых стерильных наборов. Процесс утилизации сводится к минимуму.', info: 'Подробнее' }
+    { title: 'Бережливые технологии в вашей клинике', description: 'Применение наборов NeoSet полностью отвечают задачам федерального проекта «Новая модель медицинской организации" по внедрению бережливых технологий в здравоохранении.', info: 'Подробнее', href: 'leantechnologies' },
+    { title: 'Снижение трудозатрат', description: 'Экономия времени персонала на рутинные манипуляции повышает эффективность работы подразделения. Возможность проведения медицинских манипуляций без ассистента.', info: 'Пример', href: 'fallcost' },
+    { title: 'Снижение затрат на стерилизацию', description: 'Высокотемпературная стерилизация способом автоклавирования - надежный, но затратный метод. При использовании готовых стерильных наборов - экономия очевидна.', info: 'Подробнее', href: 'sterilizationcosts' },
+    { title: 'Профилактика ИСМП', description: 'Борьба с распространением инфекций, связанных с оказанием медицинской помощи, значительно эффективнее с внедрением готовых стерильных наборов.', info: 'Подробнее', href: 'ismp' },
+    { title: 'Учет, контроль и документирование', description: 'Процессы учета расходных материалов, медицинских манипуляций и их документирование сведены к минимуму.', info: 'Подробнее', href: 'control' },
+    { title: 'Безопасное хранение и утилизация', description: 'Надежность стерильной упаковки и гарантия производителя позволяют не думать о безопасности хранения готовых стерильных наборов. Процесс утилизации сводится к минимуму.', info: 'Подробнее', href: 'safebox' }
 ]
 
 const arrProducts = [
@@ -40,11 +38,6 @@ const arrFlow = [
 ]
 
 export default function Doctors() {
-    const dialog = useRef()
-
-    function handleClick() {
-        dialog.current.show()
-    }
 
     return (
         <>
@@ -75,7 +68,7 @@ export default function Doctors() {
                         <div className="grid  md:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-8 ">
                             {arrControlTask.map((elem) => {
                                 return (
-                                    <button key={elem.title} onClick={handleClick} className=" flex group">
+                                    <Link key={elem.title} href={`/partners/solutionsfordoctors/${elem.href}`} className=" flex group">
                                         <div className="flex flex-col justify-between bg-white rounded-3xl shadow-md p-6 group-hover:bg-gray-100 transition duration-200 ease-in h-full">
                                             <div>
                                                 <h2 className="text-lg font-semibold pb-3">
@@ -87,29 +80,10 @@ export default function Doctors() {
                                                 <p className=" text-base text-primary_green transition duration-200 ease-in group-hover:scale-105">{elem.info}</p> <HiMiniArrowLongRight size={26} className="fill-primary_green pt-1" />
                                             </div>
                                         </div>
-                                    </button>
+                                    </Link>
                                 )
                             })}
-
                         </div>
-
-                        {/* <DialogModal>
-                            <dialog ref={dialog} className="w-96 h-96 bg-red-400 backdrop-blur-lg">
-                                <h1>hello world</h1>
-                            </dialog>
-                        </DialogModal> */}
-
-                        <dialog ref={dialog}>
-                            <div className="fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto my-auto backdrop-blur-sm bg-black/60">
-                                <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white p-10 rounded-xl overflow-hidden ">
-
-                                    <h1>hello world</h1>
-                                    <button onClick={() => dialog.current.close()}>close</button>
-
-                                </div>
-                            </div>
-                        </dialog>
-
                     </div>
                 </div>
             </div >
