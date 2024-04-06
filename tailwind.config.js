@@ -7,6 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        emersion: {
+          '0%': { opacity: '0', scale: '0.9' },
+          '100%': { opacity: '1', scale: '1' },
+        },
+        apparition:{
+          '0%': { opacity: '0'  },
+          '100%': { opacity: '1' },
+        }
+      },
+      animation: {
+        emersion: 'emersion 0.3s ease-in-out',
+        apparition: 'apparition 0.3s ease-in-out'
+      },
       height: {
         '128': '32rem',
         '120': '28rem',

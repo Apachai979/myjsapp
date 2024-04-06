@@ -1,9 +1,9 @@
 import Modal from "@/components/Modal"
 
-export default function Ismp() {
+export default function Control() {
     return (
         <Modal>
-            <div className="flex flex-col w-[650px] text-lg">
+            <div className="flex flex-col w-[650px] text-lg ">
                 <h1 className="text-2xl font-semibold py-3">Упрощенный учет медицинских манипуляций,<br />их документирование.</h1>
                 <p className="pb-1">Упаковка готового стерильного набора маркирована специальной этикеткой с указанием:</p>
                 <ul className="list-disc list-inside pb-2">
