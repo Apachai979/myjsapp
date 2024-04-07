@@ -4,7 +4,7 @@ export default function Leantechnologies() {
     return (
         <Modal>
             <div className="flex flex-col w-[650px] text-lg">
-                <h1 className="text-2xl font-semibold py-3">Реализация принципов <span className="text-nowrap">Бережливой <span className="text-primary_green">(Lean)</span>-медицины</span> <br />с наборами NeoSet</h1>
+                <h1 className="text-2xl font-semibold pb-3">Реализация принципов <span className="text-nowrap">Бережливой <span className="text-primary_green">(Lean)</span>-медицины</span> <br />с наборами NeoSet</h1>
                 <p className="py-1">
                     Концепция Бережливого производства в медицине - это способ оптимизации рабочего пространства для медицинского персонала, помогающий ускорить процесс работы с пациентами и улучшающий качество обслуживания. Данный подход направлен на облегчение работы врачей, медицинских сестер, младшего медицинского персонала.
                 </p>

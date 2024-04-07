@@ -1,3 +1,5 @@
+const { transform } = require('next/dist/build/swc');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -15,11 +17,16 @@ module.exports = {
         apparition:{
           '0%': { opacity: '0'  },
           '100%': { opacity: '1' },
+        },
+        movee:{
+          '0%': {bottom: '20px' },
+          '100%': {top: '4px' },
         }
       },
       animation: {
         emersion: 'emersion 0.3s ease-in-out',
-        apparition: 'apparition 0.3s ease-in-out'
+        apparition: 'apparition 0.3s ease-in-out',
+        movee: 'movee 3s ease-in-out infinite',
       },
       height: {
         '128': '32rem',

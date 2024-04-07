@@ -4,7 +4,7 @@ export default function Safebox() {
     return (
         <Modal>
             <div className="flex flex-col w-[650px] text-lg">
-                <h1 className="text-2xl font-semibold py-3">Оптимизация хранения и упрощенная утилизация</h1>
+                <h1 className="text-2xl font-semibold pb-3">Оптимизация хранения и упрощенная утилизация</h1>
                 <ul className="list-disc list-inside space-y-2">
                     <li>Комплектация в стерильную упаковку создает условия безопасного хранения нужных материалов</li>
                     <li>Гарантированная возможность безопасного хранения стерильных наборов до 5 лет</li>

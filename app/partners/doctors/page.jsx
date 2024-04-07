@@ -58,10 +58,10 @@ export default function Doctors() {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-200 py-8">
+            <div className="bg-gray-200 py-10">
                 <div className='container mx-auto px-4 max-w-[1200px]'>
                     <div className="md:text-right text-center">
-                        <h1 className="text-3xl font-semibold py-1">Возможности <span className="text-primary_green">для решения</span> управленческих задач</h1>
+                        <h1 className="text-3xl font-semibold pb-1">Возможности <span className="text-primary_green">для решения</span> управленческих задач</h1>
                         <p className="text-xl">с внедрением готовых cтерильных <br />процедурных наборов NeoSet</p>
                     </div>
                     <div className="flex mt-8">
