@@ -2,12 +2,12 @@
 import { useState } from 'react'
 import Block from './Block'
 
-export default function Accordion({ children, title }) {
+export default function Accordion({ children, title, design = ' bg-slate-100 ' }) {
     const [open, setOpen] = useState(false)
 
     return (
         <>
-            <div className="max-w-[800px] mx-auto px-10 py-4 bg-slate-100">
+            <div className={`max-w-[800px] mx-auto px-10 py-4 ${design}`}>
                 <button
                     onClick={() => {
                         setOpen(prev => !prev)
@@ -24,7 +24,7 @@ export default function Accordion({ children, title }) {
                 </button>
 
                 <div
-                    className={`text-lg grid overflow-hidden bg-slate-100 transition-all duration-300 ease-in-out ${open ? 'py-6 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    className={`text-lg grid overflow-hidden ${design} transition-all duration-300 ease-in-out ${open ? 'py-6 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                         } `}
                 >
                     <div className="overflow-hidden px-4">

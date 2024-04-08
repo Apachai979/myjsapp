@@ -21,10 +21,10 @@ export default function WithOrWithoutSet() {
 
     return (
         <Block>
-            <div className="rounded-xl max-w-[800px] overflow-hidden mx-auto my-8 outline-1 outline-red-300">
+            <div className="my-8">
                 {arrSet.map((el, index) => {
                     return (
-                        <>
+                        <div key={el.title} className="rounded-xl max-w-[800px] overflow-hidden mx-auto ">
                             <Accordion title={el.title}>
                                 {el.srcimg != '' && <Image
                                     src={el.srcimg}
@@ -46,10 +46,10 @@ export default function WithOrWithoutSet() {
                             </Accordion >
                             {index != arrSet.length - 1 && <hr className="w-full bg-white h-1 max-w-[800px] mx-auto transition-transform duration-500 " />}
 
-                        </>
+                        </div>
                     )
                 })}
-            </div >
+            </div>
         </Block>
     )
 }

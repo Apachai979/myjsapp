@@ -1,6 +1,7 @@
 import Image from "next/image"
 import WithOrWithoutSet from "@/components/WithOrWithoutSet"
 import Block from "@/components/Block"
+import NavPartners from "@/components/NavPartners"
 
 export default function Specialist() {
     return (
@@ -88,6 +89,7 @@ export default function Specialist() {
             </div>
 
             <WithOrWithoutSet />
+            <NavPartners />
 
         </>
     )
