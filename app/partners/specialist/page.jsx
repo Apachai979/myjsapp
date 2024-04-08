@@ -63,7 +63,7 @@ export default function Specialist() {
                 </Block >
 
                 <Block>
-                    <div className="flex py-10 flex-col-reverse md:flex-row">
+                    <div className="flex pt-10 flex-col-reverse md:flex-row">
                         <div className="text-xl space-y-5 md:w-7/12">
                             <p>Почему до сих пор во многих медицинских организациях делают выбор в пользу самостоятельного изготовления процедурных наборов?</p>
                             <p>Причины, которые чаще всего называют: привычнее, дешевле (хотя, мало кто сравнивал), нет времени на освоение нового.</p>
@@ -87,9 +87,7 @@ export default function Specialist() {
                 </Block>
             </div>
 
-            <WithOrWithoutSet>
-
-            </WithOrWithoutSet>
+            <WithOrWithoutSet />
 
         </>
     )
