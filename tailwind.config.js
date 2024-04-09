@@ -14,19 +14,25 @@ module.exports = {
           '0%': { opacity: '0', scale: '0.9' },
           '100%': { opacity: '1', scale: '1' },
         },
-        apparition:{
-          '0%': { opacity: '0'  },
+        apparition: {
+          '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        movee:{
-          '0%': {bottom: '20px' },
-          '100%': {top: '4px' },
-        }
+        scale: {
+          // transform: 'translateY(-10%)',
+          '0%': { opacity: '0.8', transform: 'scale(1.1)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        opacity: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         emersion: 'emersion 0.3s ease-in-out',
         apparition: 'apparition 0.3s ease-in-out',
-        movee: 'movee 3s ease-in-out infinite',
+        scale: 'scale 0.3s ease-in-out',
+        opacity: 'opacity 0.7s ease-in-out',
       },
       height: {
         '128': '32rem',
@@ -57,8 +63,8 @@ module.exports = {
 
       },
       screens: {
-        'lg1245' : '1245px',
-        'sm920' : '920px',
+        'lg1245': '1245px',
+        'sm920': '920px',
         'lg1100': '1100px',
         'lg2': '1250px',
         'md1100': '1100px',

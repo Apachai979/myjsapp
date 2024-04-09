@@ -1,5 +1,5 @@
 import Accordion from "./Accordion"
-import Block from "./Block"
+import Block from "../Block"
 import Image from "next/image";
 
 const arrSet = [
