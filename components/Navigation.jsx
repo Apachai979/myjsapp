@@ -52,12 +52,12 @@ export default function Navigation() {
                 })}
                 <div className="-space-y-1.5 flex-none block sm920:hidden text-center">
                     <p className="text-xs font-semibold text-stone-400">Тел./WhatsApp</p>
-                    <p className="lg:text-lg text-base font-semibold">+7 (495) 927-48-47</p>
+                    <p className="lg:text-lg text-base font-semibold">+7 (495) 231-01-11</p>
                 </div>
             </ul>
             <div className="-space-y-1.5 flex-none hidden sm920:block ">
                 <p className="text-xs font-semibold text-stone-400">Тел./WhatsApp</p>
-                <p className="lg:text-lg text-base font-semibold">+7 (495) 927-48-47</p>
+                <p className="lg:text-lg text-base font-semibold">+7 (495) 231-01-11</p>
             </div>
             <button
                 onClick={() => setIsActive(prev => !prev)}

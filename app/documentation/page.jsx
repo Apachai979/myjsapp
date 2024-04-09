@@ -1,9 +1,10 @@
 import Link from "next/link"
+import ConnectUs from "@/components/ConnectUs"
 
 export default function Documentation() {
     return (
         <>
-            <div className="container mx-auto max-w-[1200px] px-4 min-h-screen">
+            <div className="container mx-auto max-w-[1200px] px-4 ">
                 <h1 className="text-5xl text-txtGreen font-semibold m-10">Документы</h1>
 
                 <div className="bg-white lg:mx-10 px-10 md:px-5 pt-3 pb-6 rounded-2xl mt-10">
@@ -16,7 +17,7 @@ export default function Documentation() {
                             <p className="text-lg text-txtGreen leading-loose">PDF</p>
                         </div>
                         <div className="flex justify-between w-1/12">
-                            <Link href="/" className="text-lg text-mainGreen hover:text-txtGreen leading-loose">Скачать</Link>
+                            <Link href="/files/iso_9001_2015.pdf" className="text-lg text-mainGreen hover:text-txtGreen leading-loose">Скачать</Link>
                         </div>
                     </div>
                     <div className="flex justify-between items-center space-x-8 md:pl-5">
@@ -53,12 +54,14 @@ export default function Documentation() {
                             <p className="text-lg text-txtGreen leading-loose">PDF</p>
                         </div>
                         <div className="flex justify-between w-1/12">
-                            <Link href="/" className="text-lg text-mainGreen hover:text-txtGreen leading-loose">Скачать</Link>
+                            <Link href="/files/Order_of_the_Ministry_of_Health_of_Russia_N_919n.pdf" className="text-lg text-mainGreen hover:text-txtGreen leading-loose">Скачать</Link>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div className="mt-96">
+                <ConnectUs title='Мы готовы обсудить возникшие вопросы' txtbutton="Связаться со специалистом" />
+            </div>
         </>
     )
 }

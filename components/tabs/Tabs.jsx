@@ -15,7 +15,7 @@ const Tabs = ({ children }) => {
                 {children.map(child => (
                     <button
                         key={child.props.label}
-                        className={`${activeTab === child.props.label ? 'border border-b-white border-t-4 border-t-primary_green border-l-gray-1000 border-r-gray-300 bg-white' : 'border border-b-gray-300 border-t-0 border-r-0 border-l-0'
+                        className={`${activeTab === child.props.label ? 'border border-b-white border-t-4 border-t-primary_green border-l-gray-1000 border-r-gray-300 bg-white text-dark_green' : 'border border-b-gray-300 border-t-0 border-r-0 border-l-0'
                             } flex-1 text-night_green text-md font-semibold py-2 px-3 `}
                         onClick={e => handleClick(e, child.props.label)}
                     >

@@ -1,5 +1,6 @@
 import ButtonExtra from "@/components/buttons/ButtonExtra"
 import Image from "next/image"
+import ConnectUs from "@/components/ConnectUs"
 
 export default function About() {
 
@@ -185,13 +186,7 @@ export default function About() {
                 </div>
             </div >
 
-            {/* NextBlock */}
-            <div className='container mx-auto px-4 py-10'>
-                <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 justify-center items-center text-xl space-x-10">
-                    <h2>Мы открыты для новых проектов и сотрудничества</h2>
-                    <ButtonExtra url={'/'} textButton={"Связаться со специалистом"} />
-                </div>
-            </div>
+            <ConnectUs title='Мы открыты для новых проектов и сотрудничества' txtbutton="Связаться со специалистом" />
         </>
     )
 }

@@ -78,7 +78,7 @@ export default function Carousel() {
                             <div className='flex lg:h-1/2 grow justify-center lg:justify-normal'>
                                 <Link
                                     href={el.href}
-                                    className="self-center lg:self-start lg:mt-5 text-center py-3 px-6 lg:w-64 bg-white rounded-full text-stone-700 text-xl transition duration-300 border-2 border-primary_green hover:text-white hover:bg-primary_green hover:border-2 hover:border-white"
+                                    className="self-center lg:self-start lg:mt-5 text-center py-3 px-6 lg:w-64 bg-white rounded-full text-stone-700 text-xl transition duration-300 border-2 border-primary_green hover:text-white hover:bg-primary_green hover:border-2 hover:border-white active:border-dark_green"
                                 >
                                     {el.buttonName}
                                 </Link>
@@ -121,20 +121,20 @@ export default function Carousel() {
                     <div className="flex lg:space-x-3 lg:visible invisible w-0 lg:w-auto">
                         <button
                             onClick={previousSlide}
-                            className=" flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className=" flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green  hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleLeft
-                                className="absolute fill-white hover:fill-stone-300 transition duration-300"
+                                className="absolute fill-white transition duration-300"
                                 size="34"
                             />
                         </button>
 
                         <button
                             onClick={nextSlide}
-                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-night_green/70 hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green hover:bg-night_green transition duration-300"
                         >
                             <FaChevronCircleRight
-                                className="absolute fill-white hover:fill-stone-300 transition duration-300"
+                                className="absolute fill-white transition duration-300"
                                 size="34"
                             />
                         </button>

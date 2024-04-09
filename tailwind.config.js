@@ -18,6 +18,11 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        spinner: {
+          '0%': { transform: 'rotate(45deg)' },
+          '100%': { transform: 'rotate(405deg)' },
+
+        },
         scale: {
           // transform: 'translateY(-10%)',
           '0%': { opacity: '0.8', transform: 'scale(1.1)' },
@@ -29,6 +34,7 @@ module.exports = {
         },
       },
       animation: {
+        spinner: 'spinner 2s cubic-bezier(0.1, 0.1, 0.8, 0.2) infinite',
         emersion: 'emersion 0.3s ease-in-out',
         apparition: 'apparition 0.3s ease-in-out',
         scale: 'scale 0.3s ease-in-out',
@@ -48,6 +54,7 @@ module.exports = {
         body_bg: '#fcfbf8',
         night_green: '#133531',
         primary_green: '#15C8B4',
+        dark_green: '#31968B',
         contrast_green: '#11B19F',
         txtLight: '#bebeb4',
         middle_green: '#14a091',
