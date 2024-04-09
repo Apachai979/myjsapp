@@ -67,7 +67,12 @@ export default function AppTabs() {
                             </p>
                             <p className='pb-3'>Их список можно посмотреть в разделе <Link href='/' className='text-primary_green'>Академия</Link></p>
                             <p className='pb-3'>Также в основе СОПов должны содержаться рекомендации по применению медицинских средств, инструкции по эксплуатации медицинских изделий и техники.</p>
-                            <p>Например, при разработке СОПа на послеоперационную обработку ран пациента с использованием набора NeoSet используют инструкцию <Link href='/' className='text-primary_green'>"Набора NeoSet для обработки ран"</Link>, при разработке СОПов на катетеризацию центральных вен — инструкции по эксплуатации <Link href='/' className='text-primary_green'>"Набора NeoSet для катетеризации центральных вен"</Link>.</p>
+                            <p>Например, при разработке СОПа на послеоперационную обработку ран пациента с использованием набора NeoSet используют инструкцию <Link href='/catalogs/dlya-obrabotki-ran' className='text-primary_green'>"Набора NeoSet для обработки ран"</Link>, при разработке СОПов на катетеризацию центральных вен — инструкции по эксплуатации <Link href='/catalogs/dlya-kateterizacii-centralnyh-ven' className='text-primary_green'>"Набора NeoSet для катетеризации центральных вен"</Link>.</p>
+                            <Link href='/'>
+                                <div className="text-primary_green bg-white border-2 border-primary_green px-8 py-3 rounded-full ml-10 w-80 text-center mt-2 hover:text-white hover:bg-primary_green transition duration-300 active:shadow-inner active:bg-contrast_green active:shadow-gray-600/50">
+                                    Нормативыне документы
+                                </div>
+                            </Link>
                         </div>
                     </Tab>
                 </Tabs>
