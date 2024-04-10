@@ -7,7 +7,10 @@ export default function Catalogs() {
     return (
         <>
             <div className="container mx-auto px-4 max-w-[1200px] min-h-screen">
-                <h1 className="text-txtGreen text-4xl font-semibold text-left my-10">Каталог нашей продукции</h1>
+                <div className="flex justify-between items-end space-x-10">
+                    <h1 className="text-txtGreen text-4xl font-semibold text-left pt-10">Каталог нашей продукции</h1>
+                    <Link href='/files/catalog_30_08_24.pdf' className="sm:text-nowrap text-primary_green hover:text-dark_green">Скачать каталог в PDF</Link>
+                </div>
                 <h2 className="text-txtGreen text-2xl font-semibold text-left my-10">Наборы медицинские процедурные NeoSet</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-5 xl:grid-cols-4 justify-items-center">
                     <Neosets />
