@@ -1,18 +1,27 @@
-import { Pintset, Bandage, Coating, Withaperture, Tweezers, Scalpel, Plaster, Gauzepad, Container } from "@/components/pieces/MedicalPieces"
+import { Plasterwith, Scalpelsharptip, Needleholder, Plasterfixed, Clip, Withaperturemain, Plastermain, Pintset, Bandage, Coating, Gauzeball, Withaperture, Tweezers, Scalpel, Adhesivestrip, Gauzepad, Container, AppPieces } from "@/components/pieces/MedicalPieces"
 
 export default function Academy() {
     return (
         <div className="">
-
-            <Pintset />
-            <Bandage />
-            <Coating></Coating>
-            <Withaperture></Withaperture>
-            <Tweezers></Tweezers>
-            <Scalpel></Scalpel>
-            <Plaster></Plaster>
-            <Gauzepad></Gauzepad>
-            <Container></Container>
+            <AppPieces>
+                <Plasterwith />
+                <Scalpelsharptip />
+                <Needleholder />
+                <Plasterfixed />
+                <Pintset />
+                <Plastermain />
+                <Adhesivestrip />
+                <Clip />
+                <Tweezers></Tweezers>
+                <Scalpel></Scalpel>
+                <Gauzepad></Gauzepad>
+                <Container></Container>
+                <Withaperturemain />
+                <Withaperture></Withaperture>
+                <Coating></Coating>
+                <Bandage />
+                <Gauzeball />
+            </AppPieces>
         </div>
     )
 }
