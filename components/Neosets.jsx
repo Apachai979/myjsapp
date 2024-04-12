@@ -1,23 +1,25 @@
 import Link from "next/link"
 import Image from "next/image"
+import prisma from "@/lib/client"
 
 async function getNeosets() {
-    const response = await fetch('http://localhost:3000/api/neosets')
-
-    if (!response.ok) throw new Error("Unable to fetch Neosets.")
-
-    return response.json()
+    // const response = await fetch('http://localhost:3000/api/neosets')
+    // if (!response.ok) throw new Error("Unable to fetch Neosets.")
+    // return response.json()
+    const neosets = await prisma.neoset.findMany()
+    return neosets
 }
 
 export default async function Neosets() {
 
     const products = await getNeosets()
+    console.log(products[0].pathname)
 
     return (
         <>
             {
                 products.map((product) => (
-                    <Link key={product.name} href={`/catalogs/${product.href}`}>
+                    <Link key={product.id} href={`/catalogs/${product.pathname}`}>
                         <div className="flex flex-col w-[265px] group">
                             <Image
                                 src={product.srcImg}

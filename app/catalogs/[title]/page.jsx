@@ -1,18 +1,28 @@
 import ButtonMain from "@/components/buttons/ButtonMain";
 import Image from "next/image";
 import Link from "next/link";
+import prisma from "@/lib/client";
 
 async function getNeoset(titleName) {
-    const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
-
-    if (!response.ok) throw new Error("Unable to fetch Neosets.")
-
-    return response.json()
+    // const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
+    // if (!response.ok) throw new Error("Unable to fetch Neosets.")
+    // return response.json()
+    console.log(titleName)
+    try {
+        const data = await prisma.neoset.findFirst({
+            where: {
+                pathname: titleName
+            }
+        })
+        return data
+    } catch (e) {
+        console.log(e)
+    }
 }
 
-export default async function Neoset({ params }) {
+export default async function Neoset({ params: { title } }) {
 
-    const neoset = await getNeoset(params.title)
+    const neoset = await getNeoset(title)
 
     return (
         <>
