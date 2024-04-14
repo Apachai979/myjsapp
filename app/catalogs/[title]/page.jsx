@@ -2,6 +2,7 @@ import ButtonMain from "@/components/buttons/ButtonMain";
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/client";
+import { Gauzeball, Plasterwith, ScalpelEleven, Needleholder, Plasterfixed, Clip, Withaperturemain, Plaster, Pintset, Bandage, Coating, Withaperture, Tweezers, scalpelRemoveFiber, Adhesivestrip, Gauzepad, Container, AppPieces } from "@/components/pieces/MedicalPieces";
 
 async function getNeoset(titleName) {
     // const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
@@ -12,9 +13,27 @@ async function getNeoset(titleName) {
         const data = await prisma.neoset.findFirst({
             where: {
                 pathname: titleName
+            },
+            include: {
+                code: {
+                    include: {
+                        consist: true
+                    }
+                }
             }
+
         })
+
+        console.log(data)
+        console.log('----------------------------')
+
+        // const tmp = JSON.parse(data.code[0].compose[0].bandageCount)
+        // console.log(tmp.count)
+        const consist = data.code[0].consist[0]
+        console.log(consist)
+
         return data
+
     } catch (e) {
         console.log(e)
     }
@@ -23,6 +42,9 @@ async function getNeoset(titleName) {
 export default async function Neoset({ params: { title } }) {
 
     const neoset = await getNeoset(title)
+    // const consist = data.code[0].consist
+
+
 
     return (
         <>
@@ -58,11 +80,15 @@ export default async function Neoset({ params: { title } }) {
                         <thead>
                             <tr className="border-b border-slate-600">
                                 <th className="text-left py-2 px-4 w-6/12">Состав:</th>
-                                <th className="py-2 px-4 w-3/12">Артикул NS-001-01</th>
-                                <th className="py-2 px-4 w-3/12">Артикул NS-001-02</th>
+                                {neoset.code.map((el) => {
+                                    return <th key={el.id} className="py-2 px-4 w-3/12">{el.transcript}</th>
+                                })}
+                                {/* <th className="py-2 px-4 w-3/12">Артикул NS-001-01</th>
+                                <th className="py-2 px-4 w-3/12">Артикул NS-001-02</th> */}
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr className="border-b border-slate-300 ">
                                 <td className="py-2 px-4">Скальпель для снятия швов</td>
                                 <td className="py-2 px-4 text-center">1</td>
@@ -98,38 +124,10 @@ export default async function Neoset({ params: { title } }) {
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 max-w-[1200px] mb-10">
-                <div className="flex sm:space-x-8 flex-col sm:flex-row">
-                    <div className="flex sm:flex-col space-x-5 sm:space-x-0 justify-center items-center">
-                        <div className="flex p-5 w-1/2 sm:h-[200px] sm:w-auto">
-                            <Image
-                                src="/catalog/vector/7.svg"
-                                alt="Neoset"
-                                width={1600}
-                                height={1080}
-                                className='object-contain'>
-                            </Image >
-                        </div>
-                        <div className="w-1/2 sm:w-full">
-                            <p className="text-sm">Тампон марлевый изготавливается из высококачественной марли (100% хлопок) плотностью 20 нитей на квадратный сантиметр, имеющей европейский сертификат ЕС Certificate.</p>
-                        </div>
-                    </div>
-                    <div className="flex sm:flex-col space-x-5 sm:space-x-0 justify-center items-center">
-                        <div className="flex p-5 w-1/2 sm:h-[200px] sm:w-auto">
-                            <Image
-                                src="/catalog/vector/8.svg"
-                                alt="Neoset"
-                                width={1600}
-                                height={1080}
-                                className='object-contain'>
-                            </Image >
-                        </div>
-                        <div className="w-1/2 sm:w-full">
-                            <p className="text-sm">Марлевая салфетка имеет подвернутые кромки и изготавливается из высококачественной марли (100% хлопок) плотностью 17 нитей на квадратный сантиметр, имеющей европейский сертификат качества EC Certificate.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <AppPieces>
+                <Gauzeball />
+                <Gauzeball />
+            </AppPieces>
         </>
     )
 }

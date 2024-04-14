@@ -1,4 +1,4 @@
-import { Plasterwith, Scalpelsharptip, Needleholder, Plasterfixed, Clip, Withaperturemain, Plastermain, Pintset, Bandage, Coating, Gauzeball, Withaperture, Tweezers, Scalpel, Adhesivestrip, Gauzepad, Container, AppPieces } from "@/components/pieces/MedicalPieces"
+import { Gauzeball, Plasterwith, ScalpelEleven, Needleholder, Plasterfixed, Clip, Withaperturemain, Plaster, Pintset, Bandage, Coating, Withaperture, Tweezers, scalpelRemoveFiber, Adhesivestrip, Gauzepad, Container, AppPieces } from "@/components/pieces/MedicalPieces"
 import prisma from "@/lib/client"
 
 
@@ -25,27 +25,25 @@ export default function Academy() {
 
 
     return (
-        <div className="">
+        <>
+            <div className="">
+                <AppPieces>
+                    <Plasterwith />
+                    <Needleholder />
+                    <Plasterfixed />
+                    <Pintset />
+                    <Plaster />
+                    <Adhesivestrip />
+                    <Clip />
 
-            <AppPieces>
-                <Plasterwith />
-                <Scalpelsharptip />
-                <Needleholder />
-                <Plasterfixed />
-                <Pintset />
-                <Plastermain />
-                <Adhesivestrip />
-                <Clip />
-                <Tweezers></Tweezers>
-                <Scalpel></Scalpel>
-                <Gauzepad></Gauzepad>
-                <Container></Container>
-                <Withaperturemain />
-                <Withaperture></Withaperture>
-                <Coating></Coating>
-                <Bandage />
-                <Gauzeball />
-            </AppPieces>
-        </div>
+                    <Container></Container>
+                    <Withaperturemain />
+                    <Withaperture></Withaperture>
+                    <Coating></Coating>
+                    <Bandage />
+                    <Gauzeball />
+                </AppPieces>
+            </div>
+        </>
     )
 }

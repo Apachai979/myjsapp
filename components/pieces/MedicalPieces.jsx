@@ -124,11 +124,11 @@ const Adhesivestrip = () => {
     )
 }
 
-const Scalpel = () => {
+const scalpelRemoveFiber = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
-                src='/catalog/vector/scalpel.svg'
+                src='/catalog/vector/scalpelRemoveFiber.svg'
                 className="border rounded-lg w-[260px] h-[158px]"
                 alt="Скальпель"
                 width={260}
@@ -169,11 +169,11 @@ const Withaperture = () => {
     )
 }
 
-const Plastermain = () => {
+const Plaster = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
-                src='/catalog/vector/plastermain.svg'
+                src='/catalog/vector/plaster.svg'
                 className="border rounded-lg w-[260px] h-[158px] px-2"
                 alt="Пластырь с абсорбционной подушкой"
                 width={720}
@@ -243,11 +243,11 @@ const Needleholder = () => {
     )
 }
 
-const Scalpelsharptip = () => {
+const ScalpelEleven = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
-                src='/catalog/vector/scalpelsharptip.svg'
+                src='/catalog/vector/scalpelEleven.svg'
                 className="border rounded-lg w-[260px] h-[158px] px-2"
                 alt="Скадбпель №11"
                 width={720}
@@ -273,4 +273,4 @@ const Plasterwith = () => {
     )
 }
 
-export { Gauzeball, Plasterwith, Scalpelsharptip, Needleholder, Plasterfixed, Clip, Withaperturemain, Plastermain, Pintset, Bandage, Coating, Withaperture, Tweezers, Scalpel, Adhesivestrip, Gauzepad, Container, AppPieces };
+export { Gauzeball, Plasterwith, ScalpelEleven, Needleholder, Plasterfixed, Clip, Withaperturemain, Plaster, Pintset, Bandage, Coating, Withaperture, Tweezers, scalpelRemoveFiber, Adhesivestrip, Gauzepad, Container, AppPieces };
