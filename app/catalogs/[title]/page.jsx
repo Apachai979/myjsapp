@@ -17,21 +17,18 @@ async function getNeoset(titleName) {
             include: {
                 code: {
                     include: {
-                        consist: true
+                        consistOf: true
                     }
                 }
             }
 
         })
 
+
+
+        console.log(typeof (data.code[9]) === "undefined")
+
         console.log(data)
-        console.log('----------------------------')
-
-        // const tmp = JSON.parse(data.code[0].compose[0].bandageCount)
-        // console.log(tmp.count)
-        const consist = data.code[0].consist[0]
-        console.log(consist)
-
         return data
 
     } catch (e) {
@@ -88,22 +85,26 @@ export default async function Neoset({ params: { title } }) {
                             </tr>
                         </thead>
                         <tbody>
+                            {neoset.code.map((consist) => {
+                                return (
+                                    consist.consistOf.map((el) => {
+                                        console.log(el.component)
+                                        return (
+                                            <tr key={el.id} className="border-b border-slate-300 " >
+                                                <td className="py-2 px-4">{el.component}</td>
+                                                <td className="py-2 px-4">{el.count}</td>
+                                                <td className="py-2 px-4">7</td>
+                                            </tr>
+                                        )
+                                    })
+                                )
 
-                            <tr className="border-b border-slate-300 ">
-                                <td className="py-2 px-4">Скальпель для снятия швов</td>
-                                <td className="py-2 px-4 text-center">1</td>
-                                <td className="py-2 px-4 text-center">1</td>
-                            </tr>
-                            <tr className="border-b border-slate-300 bg-gray-50">
-                                <td className="py-2 px-4">Пинцет пластиковый с тонкими концами</td>
-                                <td className="py-2 px-4 text-center">1</td>
-                                <td className="py-2 px-4 text-center">1</td>
-                            </tr>
-                            <tr className="border-b border-slate-300">
-                                <td className="py-2 px-4">Салфетка марлевая 7,5х7,5 см, 8 слоев</td>
-                                <td className="py-2 px-4 text-center">3</td>
-                                <td className="py-2 px-4 text-center">-</td>
-                            </tr>
+                            })}
+
+
+
+
+
                             <tr className="bg-gray-50">
                                 <td className="py-2 px-4">Тампон марлевый круглый 35 мм</td>
                                 <td className="py-2 px-4 text-center">-</td>
@@ -114,7 +115,7 @@ export default async function Neoset({ params: { title } }) {
                                 <td className="p-3"> </td>
                                 <td className="p-3"> </td>
                             </tr>
-                            <tr className="border-t border-slate-400">
+                            < tr className="border-t border-slate-400" >
                                 <td className="py-2 px-4">Количество наборов в транспортной упаковке:</td>
                                 <td className="py-2 px-4 text-center">60</td>
                                 <td className="py-2 px-4 text-center">50</td>
@@ -122,7 +123,7 @@ export default async function Neoset({ params: { title } }) {
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div >
 
             <AppPieces>
                 <Gauzeball />

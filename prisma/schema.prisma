@@ -22,12 +22,13 @@ model Neoset {
 }
 
 model Code {
-  id         Int       @id @default(autoincrement())
-  neoset     Neoset?   @relation(fields: [neosetId], references: [id])
+  id         Int         @id @default(autoincrement())
+  neoset     Neoset?     @relation(fields: [neosetId], references: [id])
   neosetId   Int?
   title      String
   transcript String
   consist    Consist[]
+  consistOf  ConsistOf[]
 
   @@map("codes")
 }
@@ -53,4 +54,15 @@ model Consist {
   cover                String?
   coverAperture        String?
   coverAdhesive        String?
+}
+
+model ConsistOf {
+  id        Int    @id @default(autoincrement())
+  code      Code?  @relation(fields: [codeId], references: [id])
+  codeId    Int?
+  component String
+  count     String
+  class     String
+
+  @@map("consistOf")
 }
