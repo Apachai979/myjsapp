@@ -2,13 +2,34 @@ import ButtonMain from "@/components/buttons/ButtonMain";
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/client";
-import { Gauzeball, Plasterwith, ScalpelEleven, Needleholder, Plasterfixed, Clip, Withaperturemain, Plaster, Pintset, Bandage, Coating, Withaperture, Tweezers, scalpelRemoveFiber, Adhesivestrip, Gauzepad, Container, AppPieces } from "@/components/pieces/MedicalPieces";
+import { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, Clamp, Withaperturemain, Plaster, PintsetThin, Bandage, Cover, Withaperture, PintsetMedium, ScalpelRemoveFiber, Adhesivestrip, Ball, Container, AppPieces } from "@/components/pieces/MedicalPieces";
+
+
+const components = {
+    clamp: <Clamp />,
+    napkin: <Napkin />,
+    ball: <Ball />,
+    pintsetMedium: <PintsetMedium />,
+    pintsetThin: <PintsetThin />,
+    scalpelRemoveFiber: <ScalpelRemoveFiber />,
+    scalpelEleven: <ScalpelEleven />,
+    clamp: <Clamp />,
+    needleHolder: <NeedleHolder />,
+    container: <Container />,
+    bandage: <Bandage />,
+    plasterTrip: <PlasterTrip />,
+    plaster: <Plaster />,
+    plasterPostOperative: <PlasterPostOperative />,
+    plasterFixCatheter: <PlasterFixCatheter />,
+    cover: <Cover />,
+    coverAperture: <CoverAperture />,
+    coverAdhesive: <CoverAdhesive />,
+};
 
 async function getNeoset(titleName) {
     // const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
     // if (!response.ok) throw new Error("Unable to fetch Neosets.")
     // return response.json()
-    console.log(titleName)
     try {
         const data = await prisma.neoset.findFirst({
             where: {
@@ -24,24 +45,29 @@ async function getNeoset(titleName) {
 
         })
 
+        for (let i = 1; i < data.code.length; i++) {
+            data.code[i].consistOf.forEach(comp => {
+                let index = data.code[0].consistOf.findIndex(c => c.component === comp.component);
+                if (index !== -1) {
+                    data.code[0].consistOf[index] = {
+                        ...data.code[0].consistOf[index],
+                        ['count' + (i + 1)]: comp.count
+                    };
+                }
+            });
+        }
 
-
-        console.log(typeof (data.code[9]) === "undefined")
-
-        console.log(data)
-        return data
+        return [data, data.code[0].consistOf]
 
     } catch (e) {
         console.log(e)
     }
 }
 
+
 export default async function Neoset({ params: { title } }) {
 
-    const neoset = await getNeoset(title)
-    // const consist = data.code[0].consist
-
-
+    const [neoset, arrConsistOf] = await getNeoset(title)
 
     return (
         <>
@@ -73,52 +99,39 @@ export default async function Neoset({ params: { title } }) {
 
             <div className="container mx-auto px-4 max-w-[1200px]">
                 <div className=" rounded-xl overflow-auto bg-white">
-                    <table className="w-full">
+                    <table className="w-full table-auto">
                         <thead>
-                            <tr className="border-b border-slate-600">
-                                <th className="text-left py-2 px-4 w-6/12">Состав:</th>
+                            <tr className="border-b border-slate-600 ">
+                                <th className="text-left py-2 px-4 ">Состав:</th>
                                 {neoset.code.map((el) => {
-                                    return <th key={el.id} className="py-2 px-4 w-3/12">{el.transcript}</th>
+                                    return <th key={el.id} className="py-2 px-4 ">{el.transcript}</th>
                                 })}
-                                {/* <th className="py-2 px-4 w-3/12">Артикул NS-001-01</th>
-                                <th className="py-2 px-4 w-3/12">Артикул NS-001-02</th> */}
                             </tr>
                         </thead>
                         <tbody>
-                            {neoset.code.map((consist) => {
+                            {arrConsistOf.map((el) => {
                                 return (
-                                    consist.consistOf.map((el) => {
-                                        console.log(el.component)
-                                        return (
-                                            <tr key={el.id} className="border-b border-slate-300 " >
-                                                <td className="py-2 px-4">{el.component}</td>
-                                                <td className="py-2 px-4">{el.count}</td>
-                                                <td className="py-2 px-4">7</td>
-                                            </tr>
-                                        )
-                                    })
+                                    <tr key={el.id} className="bg-gray-50 odd:bg-white even:bg-slate-100 border-b border-stone-200">
+                                        <td className="py-2 px-4">{el.component}</td>
+                                        <td className="py-2 px-4 text-center">{el.count}</td>
+                                        <td className="py-2 px-4 text-center">{el.count2}</td>
+                                        {(typeof el.count3 !== "undefined") && <td className="py-2 px-4 text-center">{el.count3}</td>}
+                                        {(typeof el.count4 !== "undefined") && <td className="py-2 px-4 text-center">{el.count4}</td>}
+                                    </tr>
                                 )
-
                             })}
 
-
-
-
-
-                            <tr className="bg-gray-50">
-                                <td className="py-2 px-4">Тампон марлевый круглый 35 мм</td>
-                                <td className="py-2 px-4 text-center">-</td>
-                                <td className="py-2 px-4 text-center">3</td>
-                            </tr>
                             <tr className="bg-bodyColor">
-                                <td className="p-3"> </td>
-                                <td className="p-3"> </td>
-                                <td className="p-3"> </td>
+                                {Array.from({ length: neoset.code.length + 1 }, (_, index) => (
+                                    <td key={index} className="p-3"></td>
+                                ))}
                             </tr>
-                            < tr className="border-t border-slate-400" >
+
+                            <tr className="border-t border-slate-400" >
                                 <td className="py-2 px-4">Количество наборов в транспортной упаковке:</td>
                                 <td className="py-2 px-4 text-center">60</td>
                                 <td className="py-2 px-4 text-center">50</td>
+                                {/* <td className="py-2 px-4 text-center">50</td> */}
                             </tr>
                         </tbody>
                     </table>
@@ -126,8 +139,7 @@ export default async function Neoset({ params: { title } }) {
             </div >
 
             <AppPieces>
-                <Gauzeball />
-                <Gauzeball />
+                {arrConsistOf.map((el) => components[el.class])}
             </AppPieces>
         </>
     )

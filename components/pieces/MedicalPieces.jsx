@@ -3,24 +3,25 @@ import Block from "../Block"
 
 function AppPieces({ children }) {
 
-
     return (
-        <Block>
-            <div className="grid grid-cols-4 gap-2">
-                {children.map((elem) => {
-                    return (
-                        <>
-                            {elem}
-                        </>
-                    )
-                })}
-            </div>
+        <div className="mt-10">
+            <Block>
+                <div className="grid grid-cols-4 gap-2">
+                    {children.map((elem) => {
+                        return (
+                            <>
+                                {elem}
+                            </>
+                        )
+                    })}
+                </div>
 
-        </Block>
+            </Block>
+        </div>
     )
 }
 
-const Pintset = () => {
+const PintsetThin = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -30,11 +31,11 @@ const Pintset = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Пластиковый пинцет имеет тонкие кончики, специально приспособленные для точного и надежного захвата шовного материала. Выполнен из полипропилена и усилен стекловолокном.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластиковый пинцет имеет тонкие кончики, специально приспособленные для точного и надежного захвата шовного материала. Выполнен из полипропилена и усилен стекловолокном.</p>
         </div>
     )
 }
-const Gauzeball = () => {
+const Ball = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -44,7 +45,7 @@ const Gauzeball = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Тампон марлевый изготавливается из высококачественной марли (100% хлопок) плотностью 20 нитей на квадратный сантиметр, имеющей европейский сертификат ЕС Certificate.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Тампон марлевый изготавливается из высококачественной марли (100% хлопок) плотностью 20 нитей на квадратный сантиметр, имеющей европейский сертификат ЕС Certificate.</p>
         </div>
     )
 }
@@ -59,12 +60,12 @@ const Bandage = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Высокоэластичный фиксирующий бинт. Изготовлен из гипоаллергенного полиэстера. Имеет европейский сертификат качества ЕС Certificate.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Высокоэластичный фиксирующий бинт. Изготовлен из гипоаллергенного полиэстера. Имеет европейский сертификат качества ЕС Certificate.</p>
         </div >
     )
 }
 
-const Coating = () => {
+const Cover = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -74,7 +75,7 @@ const Coating = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Непромокаемое защитное покрытие выполнено из двух слоев: целлюлоза и полиэтилен. Идеально подходит в качестве подлоктевого покрытия стола, защищающего от протекания различных жидкостей.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Непромокаемое защитное покрытие выполнено из двух слоев: целлюлоза и полиэтилен. Идеально подходит в качестве подлоктевого покрытия стола, защищающего от протекания различных жидкостей.</p>
         </div>
     )
 }
@@ -88,12 +89,12 @@ const Container = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Пластиковая емкость имеет шкалу для определения объема наливаемой жидкости. Отлично подходит для дезинфицирующего раствора и смачивания марлевых тампонов.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластиковая емкость имеет шкалу для определения объема наливаемой жидкости. Отлично подходит для дезинфицирующего раствора и смачивания марлевых тампонов.</p>
         </div>
     )
 }
 
-const Gauzepad = () => {
+const Napkin = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -103,7 +104,7 @@ const Gauzepad = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Марлевая салфетка имеет подвернутые кромки и изготавливается из высококачественной марли (100% хлопок) плотностью 17 нитей на квадратный сантиметр, имеющей европейский сертификат качества EC Certificate.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Марлевая салфетка имеет подвернутые кромки и изготавливается из высококачественной марли (100% хлопок) плотностью 17 нитей на квадратный сантиметр, имеющей европейский сертификат качества EC Certificate.</p>
         </div>
     )
 }
@@ -119,12 +120,12 @@ const Adhesivestrip = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Пластырная полоска выполнена из нетканного материала с применением гипоаллергенного клея.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластырная полоска выполнена из нетканного материала с применением гипоаллергенного клея.</p>
         </div>
     )
 }
 
-const scalpelRemoveFiber = () => {
+const ScalpelRemoveFiber = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -134,12 +135,12 @@ const scalpelRemoveFiber = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Скальпель для снятия швов с пластиковой ручкой и защитным колпачком. Лезвие выполнено из нержавеющей стали и обладает удобной серповидной формой для подцепления и разрезания шовного материала. Имеет европейский сертификат качества EC Certificate.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Скальпель для снятия швов с пластиковой ручкой и защитным колпачком. Лезвие выполнено из нержавеющей стали и обладает удобной серповидной формой для подцепления и разрезания шовного материала. Имеет европейский сертификат качества EC Certificate.</p>
         </div>
     )
 }
 
-const Tweezers = () => {
+const PintsetMedium = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
             <Image
@@ -149,7 +150,7 @@ const Tweezers = () => {
                 width={260}
                 height={158}
             />
-            <p className="text-base pt-2 leading-tight ">Пластиковый пинцет имеет рифленые кончики, специально приспособленные для удобного и надежного захвата перевязочных материалов.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластиковый пинцет имеет рифленые кончики, специально приспособленные для удобного и надежного захвата перевязочных материалов.</p>
         </div>
     )
 }
@@ -164,7 +165,7 @@ const Withaperture = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Непромокаемое покрытие с апертурой и адгезивным слоем выполнено из двух слоев: целлюлоза и полиэтилен. Имеет круглый вырез диаметром 80 мм в центральной части и адгезивный слой вокруг него для надежной фиксации на теле пациента.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Непромокаемое покрытие с апертурой и адгезивным слоем выполнено из двух слоев: целлюлоза и полиэтилен. Имеет круглый вырез диаметром 80 мм в центральной части и адгезивный слой вокруг него для надежной фиксации на теле пациента.</p>
         </div>
     )
 }
@@ -179,7 +180,7 @@ const Plaster = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Пластырная повязка с абсорбционной подушкой из целлюлозы обладает кровеостанавливающими свойствами и применяется для закрытия пункционного отверстия после проведения процедуры.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластырная повязка с абсорбционной подушкой из целлюлозы обладает кровеостанавливающими свойствами и применяется для закрытия пункционного отверстия после проведения процедуры.</p>
         </div>
     )
 }
@@ -193,12 +194,12 @@ const Withaperturemain = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Непромокаемое покрытие с апертурой выполнено из двух слоев: целлюлоза и полиэтилен. Имеет круглый вырез в центральной части. Идеально подходит для защиты пациента от протекания различных жидкостей.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Непромокаемое покрытие с апертурой выполнено из двух слоев: целлюлоза и полиэтилен. Имеет круглый вырез в центральной части. Идеально подходит для защиты пациента от протекания различных жидкостей.</p>
         </div>
     )
 }
 
-const Clip = () => {
+const Clamp = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -208,12 +209,12 @@ const Clip = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Пластиковый зажим имеет рифленые бранши и зубчатый замок для надежной фиксации и зажима различных предметов. Выполнен из полипропилена и усилен стекловолокном.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластиковый зажим имеет рифленые бранши и зубчатый замок для надежной фиксации и зажима различных предметов. Выполнен из полипропилена и усилен стекловолокном.</p>
         </div>
     )
 }
 
-const Plasterfixed = () => {
+const PlasterFixCatheter = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -223,12 +224,12 @@ const Plasterfixed = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Пластырная повязка для фиксации катетеров и канюль имеет прозрачную смотровую вставку из плёнки в центре повязки и дополнительные полоски для фиксации.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластырная повязка для фиксации катетеров и канюль имеет прозрачную смотровую вставку из плёнки в центре повязки и дополнительные полоски для фиксации.</p>
         </div>
     )
 }
 
-const Needleholder = () => {
+const NeedleHolder = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -238,7 +239,7 @@ const Needleholder = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Иглодержатель выполнен из нержавеющей стали, имеет рифлёные бранши и зубчатый замок для прочного удержания иглы во время наложения швов и фиксации нити при проведении хирургических вмешательств.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Иглодержатель выполнен из нержавеющей стали, имеет рифлёные бранши и зубчатый замок для прочного удержания иглы во время наложения швов и фиксации нити при проведении хирургических вмешательств.</p>
         </div>
     )
 }
@@ -253,12 +254,12 @@ const ScalpelEleven = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Скальпель с пластиковой ручкой и защитным кожухом. Лезвие классической формы №11 для различных хирургических манипуляций выполнено из нержавеющей стали. Имеет европейский сертификат качества ЕС Certificate.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Скальпель с пластиковой ручкой и защитным кожухом. Лезвие классической формы №11 для различных хирургических манипуляций выполнено из нержавеющей стали. Имеет европейский сертификат качества ЕС Certificate.</p>
         </div>
     )
 }
 
-const Plasterwith = () => {
+const PlasterPostOperative = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -268,9 +269,9 @@ const Plasterwith = () => {
                 width={720}
                 height={480}
             />
-            <p className="text-base pt-2 leading-tight ">Пластырная повязка послеоперационная с мягкой подушечкой в центре используется для комфортного и безопасного закрытия послеоперационных ран.</p>
+            <p className="text-base pt-2 leading-tight pl-1.5 ">Пластырная повязка послеоперационная с мягкой подушечкой в центре используется для комфортного и безопасного закрытия послеоперационных ран.</p>
         </div>
     )
 }
 
-export { Gauzeball, Plasterwith, ScalpelEleven, Needleholder, Plasterfixed, Clip, Withaperturemain, Plaster, Pintset, Bandage, Coating, Withaperture, Tweezers, scalpelRemoveFiber, Adhesivestrip, Gauzepad, Container, AppPieces };
+export { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, Clamp, Withaperturemain, Plaster, PintsetThin, Bandage, Cover, Withaperture, PintsetMedium, ScalpelRemoveFiber, Adhesivestrip, Ball, Container, AppPieces };
