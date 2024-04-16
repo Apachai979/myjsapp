@@ -4,9 +4,9 @@ import Block from "../Block"
 function AppPieces({ children }) {
 
     return (
-        <div className="mt-10">
+        <div className="my-10">
             <Block>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-2 place-items-center">
                     {children.map((elem) => {
                         return (
                             <>
@@ -109,7 +109,7 @@ const Napkin = () => {
     )
 }
 
-const Adhesivestrip = () => {
+const PlasterTrip = () => {
     return (
         <div className=" w-[260px] flex flex-col  ">
 
@@ -155,7 +155,7 @@ const PintsetMedium = () => {
     )
 }
 
-const Withaperture = () => {
+const CoverAdhesive = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -184,7 +184,7 @@ const Plaster = () => {
         </div>
     )
 }
-const Withaperturemain = () => {
+const CoverAperture = () => {
     return (
         <div className=" w-[260px] flex flex-col ">
             <Image
@@ -274,4 +274,4 @@ const PlasterPostOperative = () => {
     )
 }
 
-export { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, Clamp, Withaperturemain, Plaster, PintsetThin, Bandage, Cover, Withaperture, PintsetMedium, ScalpelRemoveFiber, Adhesivestrip, Ball, Container, AppPieces };
+export { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, Clamp, Plaster, PintsetThin, Bandage, Cover, CoverAperture, PlasterTrip, PintsetMedium, ScalpelRemoveFiber, CoverAdhesive, Ball, Container, AppPieces };

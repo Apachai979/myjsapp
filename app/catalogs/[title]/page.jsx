@@ -2,7 +2,7 @@ import ButtonMain from "@/components/buttons/ButtonMain";
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "@/lib/client";
-import { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, Clamp, Withaperturemain, Plaster, PintsetThin, Bandage, Cover, Withaperture, PintsetMedium, ScalpelRemoveFiber, Adhesivestrip, Ball, Container, AppPieces } from "@/components/pieces/MedicalPieces";
+import { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, PlasterTrip, Clamp, Plaster, PintsetThin, Bandage, Cover, CoverAperture, PintsetMedium, ScalpelRemoveFiber, CoverAdhesive, Ball, Container, AppPieces } from "@/components/pieces/MedicalPieces";
 
 
 const components = {
@@ -30,6 +30,7 @@ async function getNeoset(titleName) {
     // const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
     // if (!response.ok) throw new Error("Unable to fetch Neosets.")
     // return response.json()
+
     try {
         const data = await prisma.neoset.findFirst({
             where: {
@@ -45,19 +46,21 @@ async function getNeoset(titleName) {
 
         })
 
+        const newArr = [...data.code[0].consistOf];
+
         for (let i = 1; i < data.code.length; i++) {
-            data.code[i].consistOf.forEach(comp => {
-                let index = data.code[0].consistOf.findIndex(c => c.component === comp.component);
+            newArr.forEach(comp => {
+                let index = newArr.findIndex(c => c.component === comp.component);
                 if (index !== -1) {
-                    data.code[0].consistOf[index] = {
-                        ...data.code[0].consistOf[index],
+                    newArr[index] = {
+                        ...newArr[index],
                         ['count' + (i + 1)]: comp.count
                     };
                 }
             });
         }
 
-        return [data, data.code[0].consistOf]
+        return [data, newArr]
 
     } catch (e) {
         console.log(e)
@@ -68,6 +71,72 @@ async function getNeoset(titleName) {
 export default async function Neoset({ params: { title } }) {
 
     const [neoset, arrConsistOf] = await getNeoset(title)
+
+    const Dializ = () => {
+
+        const consistOfValuesArrayStart = neoset.code
+            .filter(item => item.title === 'Начало')
+            .flatMap(item => item.consistOf);
+
+        const consistOfValuesArrayEnd = neoset.code
+            .filter(item => item.title === 'Завершение')
+            .flatMap(item => item.consistOf);
+
+        const processConsistOfValues = (arr) => {
+            return arr.reduce((acc, current) => {
+                const existingItem = acc.find(obj => obj.component === current.component);
+                if (existingItem) {
+                    existingItem[`count${existingItem.countt}`] = current.count;
+                    existingItem.countt++;
+                } else {
+                    acc.push({ ...current, countt: 2 });
+                }
+                return acc;
+            }, []);
+        };
+
+        const arrStart = processConsistOfValues(consistOfValuesArrayStart);
+        const arrEnd = processConsistOfValues(consistOfValuesArrayEnd);
+
+        function renderRows(data) {
+            return data.map((el) => (
+                <tr key={el.id} className="bg-gray-50 odd:bg-white even:bg-slate-100 border-b border-stone-200">
+                    <td className="py-2 px-4">{el.component}</td>
+                    <td className="py-2 px-4 text-center">{el.count}</td>
+                    <td className="py-2 px-4 text-center">{el.count2}</td>
+                    <td className="py-2 px-4 text-center">{el.count3}</td>
+                </tr>
+            ));
+        }
+
+        function renderEmptyCells(length) {
+            return Array.from({ length }, (_, index) => (
+                <td key={index} className="p-1"></td>
+            ));
+        }
+
+        return (
+            <>
+                <tr className="border-y border-gray-600 bg-white">
+                    <td className="py-2 px-4 font-semibold indent-5">Начало процедуры</td>
+                    <td className="className=p-3"></td>
+                    <td className="className=p-3"></td>
+                    <td className="className=p-3"></td>
+                </tr>
+                {renderRows(arrStart)}
+                <tr className="bg-bodyColor">
+                    {renderEmptyCells(neoset.code.length - 2)}
+                </tr>
+                <tr className="border-b border-gray-600 bg-white">
+                    <td className="py-2 px-4 font-semibold indent-5">Завершение процедуры</td>
+                    <td className="className=p-3"></td>
+                    <td className="className=p-3"></td>
+                    <td className="className=p-3"></td>
+                </tr>
+                {renderRows(arrEnd)}
+            </>
+        )
+    }
 
     return (
         <>
@@ -104,27 +173,35 @@ export default async function Neoset({ params: { title } }) {
                             <tr className="border-b border-slate-600 ">
                                 <th className="text-left py-2 px-4 ">Состав:</th>
                                 {neoset.code.map((el) => {
-                                    return <th key={el.id} className="py-2 px-4 ">{el.transcript}</th>
+                                    if (el.title !== "Завершение") return <th key={el.id} className="py-2 px-4 ">{el.transcript}</th>
                                 })}
                             </tr>
                         </thead>
                         <tbody>
-                            {arrConsistOf.map((el) => {
-                                return (
-                                    <tr key={el.id} className="bg-gray-50 odd:bg-white even:bg-slate-100 border-b border-stone-200">
-                                        <td className="py-2 px-4">{el.component}</td>
-                                        <td className="py-2 px-4 text-center">{el.count}</td>
-                                        <td className="py-2 px-4 text-center">{el.count2}</td>
-                                        {(typeof el.count3 !== "undefined") && <td className="py-2 px-4 text-center">{el.count3}</td>}
-                                        {(typeof el.count4 !== "undefined") && <td className="py-2 px-4 text-center">{el.count4}</td>}
-                                    </tr>
-                                )
-                            })}
+                            {title === 'dlya-gemodializa' ? <Dializ />
+                                : arrConsistOf.map((el) => {
+                                    return (
+                                        <tr key={el.id} className="bg-gray-50 odd:bg-white even:bg-slate-100 border-b border-stone-200">
+                                            <td className="py-2 px-4">{el.component}</td>
+                                            <td className="py-2 px-4 text-center">{el.count}</td>
+                                            <td className="py-2 px-4 text-center">{el.count2}</td>
+                                            {(typeof el.count3 !== "undefined") && <td className="py-2 px-4 text-center">{el.count3}</td>}
+                                            {(typeof el.count4 !== "undefined") && <td className="py-2 px-4 text-center">{el.count4}</td>}
+                                        </tr>
+                                    )
+                                })
 
-                            <tr className="bg-bodyColor">
-                                {Array.from({ length: neoset.code.length + 1 }, (_, index) => (
-                                    <td key={index} className="p-3"></td>
-                                ))}
+                            }
+
+                            <tr className="bg-bodyColor" >
+                                {title === 'dlya-gemodializa'
+                                    ? Array.from({ length: (neoset.code.length - 2) }, (_, index) => (
+                                        <td key={index} className="p-3"></td>
+                                    ))
+                                    : Array.from({ length: neoset.code.length + 1 }, (_, index) => (
+                                        <td key={index} className="p-3"></td>
+                                    ))
+                                }
                             </tr>
 
                             <tr className="border-t border-slate-400" >
