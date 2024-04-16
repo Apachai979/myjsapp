@@ -6,44 +6,45 @@ import { FaChevronCircleLeft } from 'react-icons/fa'
 import { FaChevronCircleRight } from 'react-icons/fa'
 import Link from 'next/link'
 
+const slides = [
+    {
+        id: 1,
+        description: 'Одноразовые процедурные стерильные наборы',
+        buttonName: 'Посмотреть каталог',
+        src: '/sliderImage/machine.png',
+        href: '/catalogs',
+    },
+    {
+        id: 2,
+        description: 'Собственное производство',
+        buttonName: 'Ознакомиться',
+        src: '/sliderImage/marla.png',
+        href: '/manufacture',
+    },
+    {
+        id: 3,
+        description: 'Сырьё и материалы',
+        buttonName: 'Подробнее',
+        src: '/sliderImage/medsisters.png',
+        href: '/manufacture#storage',
+    },
+    {
+        id: 4,
+        description: 'Стерильность и безопасность',
+        buttonName: 'Подробнее',
+        src: '/sliderImage/nabor.png',
+        href: '/manufacture#sterility',
+    },
+    {
+        id: 5,
+        description: 'Полезное для профессионалов',
+        buttonName: 'Подробнее',
+        src: '/sliderImage/proc.png',
+        href: '/partners/specialist',
+    },
+]
+
 export default function Carousel() {
-    const slides = [
-        {
-            id: 1,
-            description: 'Одноразовые процедурные стерильные наборы',
-            buttonName: 'Посмотреть каталог',
-            src: '/sliderImage/machine.png',
-            href: '/',
-        },
-        {
-            id: 2,
-            description: 'Собственное производство',
-            buttonName: 'Ознакомиться',
-            src: '/sliderImage/marla.png',
-            href: '/',
-        },
-        {
-            id: 3,
-            description: 'Сырьё и материалы',
-            buttonName: 'Подробнее',
-            src: '/sliderImage/medsisters.png',
-            href: '/',
-        },
-        {
-            id: 4,
-            description: 'Стерильность и безопасность',
-            buttonName: 'Подробнее',
-            src: '/sliderImage/nabor.png',
-            href: '/',
-        },
-        {
-            id: 5,
-            description: 'Полезное для профессионалов',
-            buttonName: 'Подробнее',
-            src: '/sliderImage/proc.png',
-            href: '/',
-        },
-    ]
 
     const [slide, setSlide] = useState(1)
 

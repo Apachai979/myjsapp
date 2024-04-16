@@ -186,10 +186,12 @@ export default function Manufacture() {
                     </div>
                 </div>
             </div>
-
+            <div id="storage" className='bg-gray-100 pt-5'>
+                <div className=' bg-body_bg pb-10'></div>
+            </div>
             {/* nexblock */}
 
-            <div className="container mx-auto px-4 max-w-[1200px] py-10">
+            <div className="container mx-auto px-4 max-w-[1200px] pb-10">
                 <div className="flex justify-center flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
                     <div className="flex-1 flex flex-col">
                         <h1 className="text-5xl text-txtGreen">Сырье и материалы</h1>
@@ -275,10 +277,15 @@ export default function Manufacture() {
                         </div>
                     </div>
                 </div>
+
             </div>
             {/* nexblock */}
 
-            <div className="container mx-auto px-4 max-w-[1200px] py-10">
+            <div id="sterility" className='bg-gray-100 pt-3'>
+                <div className=' bg-body_bg pb-12'></div>
+            </div>
+
+            <div className="container mx-auto px-4 max-w-[1200px] pb-10">
                 <div className="flex justify-center  items-center flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10">
                     <div className="flex w-6/12 flex-col">
                         <h1 className="text-5xl text-txtGreen">
@@ -336,6 +343,7 @@ export default function Manufacture() {
                         ></Image>
                     </div>
                 </div>
+
             </div>
 
             {/* nexblock */}

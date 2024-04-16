@@ -13,7 +13,6 @@ async function getNeosets() {
 export default async function Neosets() {
 
     const products = await getNeosets()
-    console.log(products[0].pathname)
 
     return (
         <>

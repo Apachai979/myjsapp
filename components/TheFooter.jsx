@@ -22,13 +22,13 @@ export default function TheFooter() {
                     <div className="flex-auto flex justify-center space-x-3 md:space-x-0 md:flex-col text-lg">
                         <Link href="/" className="hover:text-mainGreen focus:text-mainGreen">Главная</Link>
                         <Link href="/partners" className="hover:text-mainGreen focus:text-mainGreen">Партнерам</Link>
-                        <Link href="/about" className="hover:text-mainGreen focus:text-mainGreen">Специалисту</Link>
+                        <Link href="/partners/specialist" className="hover:text-mainGreen focus:text-mainGreen">Специалисту</Link>
                         <Link href="/partners/doctors" className="hover:text-mainGreen focus:text-mainGreen whitespace-nowrap">Главному врачу</Link>
                     </div>
                     <div className="flex-auto flex justify-center space-x-3 md:space-x-0 md:flex-col text-lg">
                         <Link href="/documents" className="hover:text-mainGreen focus:text-mainGreen whitespace-nowrap">О Компании</Link>
                         <Link href="/academy" className="hover:text-mainGreen focus:text-mainGreen">Академия</Link>
-                        <Link href="/contacts" className="hover:text-mainGreen focus:text-mainGreen">Пациенту</Link>
+                        <Link href="/partners/patient" className="hover:text-mainGreen focus:text-mainGreen">Пациенту</Link>
                         <Link href="/about" className="hover:text-mainGreen focus:text-mainGreen">Отзывы</Link>
                     </div>
                     <div className="flex-auto flex justify-center space-x-3 md:space-x-0 md:flex-col text-lg">

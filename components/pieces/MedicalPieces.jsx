@@ -7,12 +7,8 @@ function AppPieces({ children }) {
         <div className="my-10">
             <Block>
                 <div className="grid grid-cols-4 gap-2 place-items-center">
-                    {children.map((elem) => {
-                        return (
-                            <>
-                                {elem}
-                            </>
-                        )
+                    {children.map((elem, index) => {
+                        return <div key={index} >{elem}</div>
                     })}
                 </div>
 
@@ -23,7 +19,7 @@ function AppPieces({ children }) {
 
 const PintsetThin = () => {
     return (
-        <div className=" w-[260px] flex flex-col  ">
+        <div key="pintsetThin" className=" w-[260px] flex flex-col  ">
             <Image
                 src='/catalog/vector/pintset.svg'
                 className="border rounded-lg w-[260px] h-[158px]"
@@ -37,7 +33,7 @@ const PintsetThin = () => {
 }
 const Ball = () => {
     return (
-        <div className=" w-[260px] flex flex-col  ">
+        <div key="ball" className=" w-[260px] flex flex-col  ">
             <Image
                 src='/catalog/vector/gauzeball.svg'
                 className="border rounded-lg w-[260px] h-[158px] py-2"
@@ -81,7 +77,7 @@ const Cover = () => {
 }
 const Container = () => {
     return (
-        <div className=" w-[260px] flex flex-col  ">
+        <div key="container" className=" w-[260px] flex flex-col  ">
             <Image
                 src='/catalog/vector/container.svg'
                 className="border rounded-lg w-[260px] h-[158px] py-2"
