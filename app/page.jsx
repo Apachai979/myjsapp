@@ -4,12 +4,16 @@ import Carousel from "@/components/Carousel";
 import WeWorkFor from "@/components/WeWorkFor";
 import ConnectWithUs from "@/components/ConnectWithUs";
 
+export const metadata = {
+  title: 'Компания OneStep',
+  description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function Home() {
 
 
   return (
     <>
-
       <Carousel />
 
       {/* nextblock */}
