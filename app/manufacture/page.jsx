@@ -57,7 +57,7 @@ export default function Manufacture() {
     return (
         <>
             <div className="flex justify-center h-[500px] w-full relative bg-fixed ">
-                <div className="absolute z-20 w-full h-full bg-txtGreen/50"></div>
+                <div className="absolute  w-full h-full bg-txtGreen/50"></div>
                 <Video className="w-full"></Video>
                 {/* <Image
                     src="/manufacture/manuf1.jpeg"
@@ -67,10 +67,10 @@ export default function Manufacture() {
                     className='object-cover z-10'>
                 </Image> */}
 
-                <h1 className="z-30 absolute bottom-[300px] text-center text-white font-semibold text-6xl">
+                <h1 className="z-10 absolute bottom-[300px] text-center text-white font-semibold text-6xl">
                     Производство OneStep
                 </h1>
-                <h2 className="z-30 absolute bottom-[200px] text-center text-white font-semibold text-3xl">
+                <h2 className="z-10 absolute bottom-[200px] text-center text-white font-semibold text-3xl">
                     Современные технологии и мировые стандарты качества
                 </h2>
             </div>
