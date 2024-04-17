@@ -6,6 +6,10 @@ import { BsCheckLg } from "react-icons/bs";
 import NavPartners from "@/components/NavPartners";
 import Block from "@/components/Block";
 
+export const metadata = {
+    title: 'Главному врачу | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
 
 const arrControlTask = [
     { title: 'Бережливые технологии в вашей клинике', description: 'Применение наборов NeoSet полностью отвечают задачам федерального проекта «Новая модель медицинской организации" по внедрению бережливых технологий в здравоохранении.', info: 'Подробнее', href: 'leantechnologies' },

@@ -1,5 +1,9 @@
 // import FormContact from "@/components/Forms/FormContact"
 
+export const metadata = {
+    title: 'Контакты | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
 
 export default function Contacts() {
 

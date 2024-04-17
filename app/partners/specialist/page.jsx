@@ -4,6 +4,11 @@ import Block from "@/components/Block"
 import NavPartners from "@/components/NavPartners"
 import AppTabs from '@/components/tabs/AppTabs'
 
+export const metadata = {
+    title: 'Специалисту | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function Specialist() {
     return (
         <>

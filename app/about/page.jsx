@@ -2,6 +2,11 @@ import ButtonExtra from "@/components/buttons/ButtonExtra"
 import Image from "next/image"
 import ConnectUs from "@/components/ConnectUs"
 
+export const metadata = {
+    title: 'О компании | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function About() {
 
     const ruleOneStep = [

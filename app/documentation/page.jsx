@@ -1,6 +1,11 @@
 import Link from "next/link"
 import ConnectUs from "@/components/ConnectUs"
 
+export const metadata = {
+    title: 'Документы | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function Documentation() {
     return (
         <>

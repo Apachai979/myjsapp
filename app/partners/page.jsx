@@ -2,6 +2,11 @@ import ConnectWithUs from '@/components/ConnectWithUs';
 import Block from '@/components/Block';
 import NavPartners from '@/components/NavPartners';
 
+export const metadata = {
+    title: 'Партнерам | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function Partners() {
 
     const partnersInfo = [

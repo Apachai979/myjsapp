@@ -1,6 +1,11 @@
 import Video from '@/components/Video'
 import Image from 'next/image'
 
+export const metadata = {
+    title: 'О производстве | OneStep',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 const lean = [
     {
         title: 'Производим ровно столько продукции, сколько нужно потребителям',
