@@ -4,7 +4,7 @@ import NavPartners from "@/components/NavPartners"
 import Accordion from "@/components/accordions/Accordion"
 
 export const metadata = {
-    title: 'Пациенту | OneStep',
+    title: 'Пациенту',
     description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
 }
 

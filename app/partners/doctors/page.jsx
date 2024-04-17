@@ -7,7 +7,7 @@ import NavPartners from "@/components/NavPartners";
 import Block from "@/components/Block";
 
 export const metadata = {
-    title: 'Главному врачу | OneStep',
+    title: 'Главному врачу',
     description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
 }
 

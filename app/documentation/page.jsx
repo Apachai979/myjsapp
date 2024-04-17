@@ -2,7 +2,7 @@ import Link from "next/link"
 import ConnectUs from "@/components/ConnectUs"
 
 export const metadata = {
-    title: 'Документы | OneStep',
+    title: 'Документы',
     description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
 }
 

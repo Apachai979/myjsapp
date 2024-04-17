@@ -7,9 +7,12 @@ const inter = Inter({ subsets: ["latin"] });
 const notoSans = Noto_Sans({ subsets: ['cyrillic'], weight: ['300', '400', '500', '600', '700', '800'] })
 
 export const metadata = {
-  title: "Onestep",
-  description: "Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов",
-};
+  title: {
+    template: '%s | Onestep',
+    default: 'Onestep',
+    description: "Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов",
+  },
+}
 
 export default function RootLayout({ children, modal }) {
   return (

@@ -2,6 +2,11 @@ import Link from "next/link"
 import Neosets from "@/components/Neosets"
 import TellaSoft from "@/components/TellaSoft"
 
+export const metadata = {
+    title: 'Каталог',
+    description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
+}
+
 export default function Catalogs() {
 
     return (

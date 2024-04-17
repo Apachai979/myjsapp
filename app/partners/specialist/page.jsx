@@ -5,7 +5,7 @@ import NavPartners from "@/components/NavPartners"
 import AppTabs from '@/components/tabs/AppTabs'
 
 export const metadata = {
-    title: 'Специалисту | OneStep',
+    title: 'Специалисту',
     description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
 }
 

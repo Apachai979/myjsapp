@@ -4,6 +4,18 @@ import Link from "next/link";
 import prisma from "@/lib/client";
 import { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, PlasterTrip, Clamp, Plaster, PintsetThin, Bandage, Cover, CoverAperture, PintsetMedium, ScalpelRemoveFiber, CoverAdhesive, Ball, Container, AppPieces } from "@/components/pieces/MedicalPieces";
 
+export async function generateMetadata({ params: { title } }) {
+
+    const data = await prisma.neoset.findFirst({
+        where: {
+            pathname: title
+        }
+    })
+
+    return {
+        title: data.name,
+    }
+}
 
 const components = {
     clamp: <Clamp />,

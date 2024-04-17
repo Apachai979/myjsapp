@@ -6,9 +6,9 @@ function AppPieces({ children }) {
     return (
         <div className="my-10">
             <Block>
-                <div className="grid grid-cols-4 gap-2 place-items-center">
+                <div className="grid  sm:grid-cols-2 sm920:grid-cols-3 lg1100:grid-cols-4 justify-items-center gap-2">
                     {children.map((elem, index) => {
-                        return <div key={index} >{elem}</div>
+                        return <div key={index}>{elem}</div>
                     })}
                 </div>
 

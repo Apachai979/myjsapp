@@ -3,7 +3,7 @@ import Image from "next/image"
 import ConnectUs from "@/components/ConnectUs"
 
 export const metadata = {
-    title: 'О компании | OneStep',
+    title: 'О компании',
     description: 'Российский производитель медицинских одноразовых перевязочных материалов и процедурных стерильных наборов',
 }
 
