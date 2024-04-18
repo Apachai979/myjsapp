@@ -84,6 +84,18 @@ export default async function Neoset({ params: { title } }) {
 
     const [neoset, arrConsistOf] = await getNeoset(title)
 
+    function DializImage(neosetCode, sliceSize) {
+        return Object.values(neosetCode
+            .slice(0, sliceSize)
+            .flatMap(obj => obj.consistOf)
+            .reduce((mergedComponents, item) => {
+                if (!mergedComponents[item.component]) {
+                    mergedComponents[item.component] = item;
+                }
+                return mergedComponents;
+            }, []));
+    }
+
     const Dializ = () => {
 
         const consistOfValuesArrayStart = neoset.code
@@ -229,7 +241,9 @@ export default async function Neoset({ params: { title } }) {
             </div >
 
             <AppPieces>
-                {arrConsistOf.map((el) => components[el.class])}
+                {title === 'dlya-gemodializa'
+                    ? DializImage(neoset.code, 2).map((el) => components[el.class])
+                    : arrConsistOf.map((el) => components[el.class])}
             </AppPieces>
         </>
     )
