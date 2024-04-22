@@ -1,4 +1,4 @@
-// import FormContact from "@/components/Forms/FormContact"
+import FormContact from "@/components/Forms/FormContact"
 
 export const metadata = {
     title: 'Контакты',
@@ -27,7 +27,7 @@ export default function Contacts() {
 
                     </div>
 
-                    {/* <FormContact /> */}
+                    <FormContact />
                     {/* <Test /> */}
                 </div>
 
