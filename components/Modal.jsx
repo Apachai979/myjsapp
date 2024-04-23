@@ -13,7 +13,7 @@ export default function Modal({ children }) {
 
     const onClick = useCallback(
         (e) => {
-            if (e.target === overlay.current || e.target === wrapper.current) {
+            if (e.target === overlay.current) {
                 if (onDismiss) onDismiss()
             }
         },

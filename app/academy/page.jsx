@@ -13,9 +13,8 @@ export default function Academy() {
 
     return (
         <>
-            <div className="">
 
-            </div>
+
         </>
     )
 }

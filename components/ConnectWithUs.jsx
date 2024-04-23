@@ -1,6 +1,4 @@
-'use client'
 import ButtonMain from "./buttons/ButtonMain"
-import { useState } from "react"
 
 export default function ConnectWithUs({ title, textButton }) {
 
