@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 import { ImSpinner2 } from "react-icons/im";
+import InputMask from "react-input-mask";
 
 export default function FormContact({ titleForForm }) {
 
@@ -42,11 +43,8 @@ export default function FormContact({ titleForForm }) {
                 sethasErrorEmail(hasError);
                 break;
             case 'PHONE':
-                regex = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+                regex = /^.{7,}$/
                 hasError = regex.test(value);
-                if (value.length === 6 || value.length === 10 || value.length === 13) {
-                    e.target.value += "-";
-                }
                 setHasErrorTel(hasError);
                 break;
         }
@@ -104,8 +102,8 @@ export default function FormContact({ titleForForm }) {
             </div>
             :
             <section>
-                <h1 className="text-2xl mb-4">{titleForForm}</h1>
 
+                <h1 className="text-2xl mb-4">{titleForForm}</h1>
                 <form onSubmit={handleSubmit} className=" space-y-4 w-96">
 
                     <div className="relative">
@@ -124,7 +122,7 @@ export default function FormContact({ titleForForm }) {
                     </div>
 
                     <div className="relative">
-                        <input id="your_phone_number" type="text" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " onFocus={(e) => e.target.value === "" ? e.target.value = "+7 " : null} name='PHONE' onChange={handleCheckInput} />
+                        <InputMask mask="+\7 999 999 99 99" maskChar={null} id="your_phone_number" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " name='PHONE' onChange={handleCheckInput} />
                         <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-focus:translate-y-1.5 duration-300 transform translate-y-1.5 peer-placeholder-shown:translate-y-0">
                             <FaPhone />
                         </div>
