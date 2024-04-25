@@ -103,7 +103,7 @@ export default function FormContact({ titleForForm }) {
             :
             <section>
 
-                <h1 className="text-2xl mb-4">{titleForForm}</h1>
+                <h1 className="text-2xl mb-4 text-center">{titleForForm}</h1>
                 <form onSubmit={handleSubmit} className=" space-y-4 w-96">
 
                     <div className="relative">
@@ -121,13 +121,13 @@ export default function FormContact({ titleForForm }) {
                         <label htmlFor="your_email" className="label">Ваш e-mail</label>
                     </div>
 
-                    <div className="relative">
+                    {/* <div className="relative">
                         <InputMask mask="+\7 999 999 99 99" maskChar={null} id="your_phone_number" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " name='PHONE' onChange={handleCheckInput} />
                         <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-focus:translate-y-1.5 duration-300 transform translate-y-1.5 peer-placeholder-shown:translate-y-0">
                             <FaPhone />
                         </div>
                         <label htmlFor="your_phone_number" className="pl-8 label">Ваш телефон</label>
-                    </div>
+                    </div> */}
 
                     <div className="relative">
                         <input id="your_company" type="text" className="input border-gray-300  focus:border-primary_green peer" placeholder=" " name='COMPANY_TITLE' onChange={handleCheckInput} />
