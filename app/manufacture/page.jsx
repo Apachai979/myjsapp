@@ -1,5 +1,6 @@
 import Video from '@/components/Video'
 import Image from 'next/image'
+import ConnectUs from '@/components/ConnectUs'
 
 export const metadata = {
     title: 'О производстве',
@@ -399,6 +400,7 @@ export default function Manufacture() {
                     </div>
                 </div>
             </div>
+            <ConnectUs title='Мы открыты для новых проектов и сотрудничества' txtbutton="Связаться со специалистом" />
         </>
     )
 }

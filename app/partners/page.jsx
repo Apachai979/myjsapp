@@ -75,8 +75,8 @@ export default function Partners() {
             </div >
 
             {/* nextblock */}
-            < ConnectWithUs title='Стать нашим партнером легко, работать с нами выгодно!' url='/' textButton='Связаться со специалистом' />
-            <NavPartners></NavPartners>
+            < ConnectWithUs title='Стать нашим партнером легко, работать с нами выгодно!' titleForForm="Стать нашим партнером:" textButton='Связаться со специалистом' />
+            <NavPartners />
         </>
     )
 }

@@ -190,7 +190,7 @@ export default function Home() {
 
       {/* nextblock */}
 
-      <ConnectWithUs title="Наш специалист ответит на ваши вопросы!" url="/" textButton="Связаться с нами" />
+      <ConnectWithUs title="Наш специалист ответит на ваши вопросы!" titleForForm="Задать вопрос специалисту:" textButton="Связаться с нами" />
 
     </>
   );

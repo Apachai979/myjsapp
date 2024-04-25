@@ -122,7 +122,7 @@ export default function Carousel() {
                     <div className="flex lg:space-x-3 lg:visible invisible w-0 lg:w-auto">
                         <button
                             onClick={previousSlide}
-                            className=" flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green  hover:bg-night_green transition duration-300"
+                            className=" flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green  hover:bg-night_green transition duration-300 active:scale-95"
                         >
                             <FaChevronCircleLeft
                                 className="absolute fill-white transition duration-300"
@@ -132,7 +132,7 @@ export default function Carousel() {
 
                         <button
                             onClick={nextSlide}
-                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green hover:bg-night_green transition duration-300"
+                            className="flex h-8 w-8 outline-0 rounded-full justify-center items-center p-4 z-50 bg-dark_green hover:bg-night_green transition duration-300 active:scale-95"
                         >
                             <FaChevronCircleRight
                                 className="absolute fill-white transition duration-300"
