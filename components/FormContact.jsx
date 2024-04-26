@@ -3,9 +3,11 @@ import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 import { ImSpinner2 } from "react-icons/im";
 import InputMask from "react-input-mask";
+import PhoneInputQi from "./input/PhoneInputQi";
 
 export default function FormContact({ titleForForm }) {
 
+    const code = '+7 ';
     const [spinner, setSpinner] = useState(false);
     const [success, setSuccess] = useState(false)
     const [hasErrorEmail, sethasErrorEmail] = useState(true);
@@ -16,41 +18,63 @@ export default function FormContact({ titleForForm }) {
         NAME: '',
         LAST_NAME: '',
         EMAIL: '',
-        PHONE: '',
+        PHONE: '+7 ',
         COMPANY_TITLE: '',
         MESSAGE: '',
         SOURCE_ID: 'Веб-сайт(форма на сайте)'
     });
 
+    // const handleFocus = (e) => {
+    //     console.log(e.target)
+    //     if (formData[e.target.name] === '') {
+    //         setFormData(prevFormData => ({ ...prevFormData, [e.target.name]: code }));
+    //     }
+    //     console.log(formData[e.target.name])
+    // };
     function handleCheckInput(e) {
         const { name, value } = e.target;
         let regex, hasError;
-
         switch (name) {
             case 'NAME':
                 regex = /^[A-Za-zА-Яа-яЁё]{2,}$/;
                 hasError = regex.test(value);
                 setHasErrorName(hasError);
+                setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
                 break;
             case 'LAST_NAME':
                 regex = /^[A-Za-zА-Яа-яЁё]{2,}$/;
                 hasError = regex.test(value);
                 setHasErrorName(hasError);
+                setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
                 break;
             case 'EMAIL':
                 regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
                 hasError = regex.test(value);
                 sethasErrorEmail(hasError);
+                setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
                 break;
             case 'PHONE':
+                console.log(value)
+                let inputValue = value;
+                const onlyNumbers = inputValue.slice(3, 16).replace(/[^\d]/g, '');
+
+                let formattedValue = '';
+                for (let i = 0; i < onlyNumbers.length; i++) {
+                    if (i === 3 || i === 6 || i === 8 || i === 10) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += onlyNumbers[i];
+                }
+                const result = code + formattedValue
                 regex = /^.{7,}$/
-                hasError = regex.test(value);
+                hasError = regex.test(result);
                 setHasErrorTel(hasError);
+                setFormData(prevFormData => ({ ...prevFormData, [name]: result }));
+                break;
+            default:
+                setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
                 break;
         }
-
-        setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
-        console.log(formData['COMPANY_TITLE'])
     }
 
     const handleSubmit = async (e) => {
@@ -121,13 +145,13 @@ export default function FormContact({ titleForForm }) {
                         <label htmlFor="your_email" className="label">Ваш e-mail</label>
                     </div>
 
-                    {/* <div className="relative">
-                        <InputMask mask="+\7 999 999 99 99" maskChar={null} id="your_phone_number" required className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " name='PHONE' onChange={handleCheckInput} />
+                    <div className="relative">
+                        <input maxLength={16} type="text" id="your_phone_number" className={hasErrorTel ? "pl-10 input border-gray-300  focus:border-primary_green peer" : "pl-10 input border-red-500 "} placeholder=" " name='PHONE' onChange={handleCheckInput} value={formData.PHONE} />
                         <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none peer-focus:translate-y-1.5 duration-300 transform translate-y-1.5 peer-placeholder-shown:translate-y-0">
                             <FaPhone />
                         </div>
                         <label htmlFor="your_phone_number" className="pl-8 label">Ваш телефон</label>
-                    </div> */}
+                    </div>
 
                     <div className="relative">
                         <input id="your_company" type="text" className="input border-gray-300  focus:border-primary_green peer" placeholder=" " name='COMPANY_TITLE' onChange={handleCheckInput} />

@@ -1,6 +1,6 @@
 'use client'
 import { useCallback, useRef, useEffect, useState } from 'react'
-import FormContact from '../forms/FormContact';
+import FormContact from '../FormContact';
 
 export default function ButtonOpenForm({ children, titleForForm = "Задать вопрос специалисту:" }) {
     const [isOpen, setIsOpen] = useState(false);

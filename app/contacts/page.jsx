@@ -1,4 +1,4 @@
-import FormContact from "@/components/Forms/FormContact"
+import FormContact from "@/components/FormContact"
 
 export const metadata = {
     title: 'Контакты',
