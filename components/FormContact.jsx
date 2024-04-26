@@ -2,8 +2,6 @@
 import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 import { ImSpinner2 } from "react-icons/im";
-import InputMask from "react-input-mask";
-import PhoneInputQi from "./input/PhoneInputQi";
 
 export default function FormContact({ titleForForm }) {
 
@@ -24,13 +22,6 @@ export default function FormContact({ titleForForm }) {
         SOURCE_ID: 'Веб-сайт(форма на сайте)'
     });
 
-    // const handleFocus = (e) => {
-    //     console.log(e.target)
-    //     if (formData[e.target.name] === '') {
-    //         setFormData(prevFormData => ({ ...prevFormData, [e.target.name]: code }));
-    //     }
-    //     console.log(formData[e.target.name])
-    // };
     function handleCheckInput(e) {
         const { name, value } = e.target;
         let regex, hasError;
@@ -86,7 +77,7 @@ export default function FormContact({ titleForForm }) {
         for (const key in formData) {
             if (formData.hasOwnProperty(key)) {
 
-                const formattedStr = key !== 'TITLE' && key !== 'SOURCE_ID' ? formData[key].replace(/[\s!#$%^&*()\-\+]/g, '') : formData[key];
+                const formattedStr = key !== 'TITLE' && key !== 'SOURCE_ID' ? formData[key].replace(/[\s!#$%^&*()\-]/g, '') : formData[key];
 
                 query += key === 'PHONE' || key === 'EMAIL'
                     ? `FIELDS[${key}][0][VALUE]=${formattedStr}&`
