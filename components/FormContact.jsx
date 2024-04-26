@@ -45,7 +45,6 @@ export default function FormContact({ titleForForm }) {
                 setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
                 break;
             case 'PHONE':
-                console.log(value)
                 let inputValue = value;
                 const onlyNumbers = inputValue.slice(3, 16).replace(/[^\d]/g, '');
 
