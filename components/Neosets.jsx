@@ -2,10 +2,18 @@ import Link from "next/link"
 import Image from "next/image"
 import prisma from "@/lib/client"
 
+
+const delay = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+};
+
 async function getNeosets() {
     // const response = await fetch('http://localhost:3000/api/neosets')
     // if (!response.ok) throw new Error("Unable to fetch Neosets.")
     // return response.json()
+
+    await delay(10000)
+
     const neosets = await prisma.neoset.findMany()
     return neosets
 }

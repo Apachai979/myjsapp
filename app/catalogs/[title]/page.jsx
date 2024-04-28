@@ -4,6 +4,11 @@ import Link from "next/link";
 import prisma from "@/lib/client";
 import { Napkin, PlasterPostOperative, ScalpelEleven, NeedleHolder, PlasterFixCatheter, PlasterTrip, Clamp, Plaster, PintsetThin, Bandage, Cover, CoverAperture, PintsetMedium, ScalpelRemoveFiber, CoverAdhesive, Ball, Container, AppPieces } from "@/components/pieces/MedicalPieces";
 
+
+// const delay = (milliseconds) => {
+//     return new Promise(resolve => setTimeout(resolve, milliseconds));
+// };
+
 export async function generateStaticParams() {
     const neosets = await prisma.neoset.findMany()
     return neosets.map((neo) => ({
@@ -49,6 +54,8 @@ async function getNeoset(titleName) {
     // const response = await fetch('http://localhost:3000/api/neosets/' + titleName)
     // if (!response.ok) throw new Error("Unable to fetch Neosets.")
     // return response.json()
+
+    // await delay(10000)
 
     try {
         const data = await prisma.neoset.findFirst({
